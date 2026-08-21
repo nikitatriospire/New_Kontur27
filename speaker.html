@@ -583,43 +583,43 @@
                                                     class="w-full text-left py-4 transition-colors">
                                                     #4 Öffentlichen Raum stärken
                                                 </button>
-                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#5 Teilhabe ermöglichen'; dropdownOpen = false"
+                                                <button  type="button"  @click="activeFilter = 'cat5'; selectedCategoryName = '#5 Teilhabe ermöglichen'; dropdownOpen = false"
                                                     :class="activeFilter === 'cat5' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
                                                     class="w-full text-left py-4 transition-colors">
                                                     #5 Teilhabe ermöglichen
                                                 </button>
-                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#6 Resilienz vorantreiben'; dropdownOpen = false"
+                                                <button  type="button"  @click="activeFilter = 'cat6'; selectedCategoryName = '#6 Resilienz vorantreiben'; dropdownOpen = false"
                                                     :class="activeFilter === 'cat6' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
                                                     class="w-full text-left py-4 transition-colors">
                                                    #6 Resilienz vorantreiben
                                                 </button>
-                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#7 Zirkularität umsetzen'; dropdownOpen = false"
+                                                <button  type="button"  @click="activeFilter = 'cat7'; selectedCategoryName = '#7 Zirkularität umsetzen'; dropdownOpen = false"
                                                     :class="activeFilter === 'cat7' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
                                                     class="w-full text-left py-4 transition-colors">
                                                     #7 Zirkularität umsetzen
                                                 </button>
-                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#8 Digital planen'; dropdownOpen = false"
+                                                <button  type="button"  @click="activeFilter = 'cat8'; selectedCategoryName = '#8 Digital planen'; dropdownOpen = false"
                                                     :class="activeFilter === 'cat8' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
                                                     class="w-full text-left py-4 transition-colors">
                                                    #8 Digital planen
                                                 </button>
-                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#9 Einfach bauen'; dropdownOpen = false"
+                                                <button  type="button"  @click="activeFilter = 'cat9'; selectedCategoryName = '#9 Einfach bauen'; dropdownOpen = false"
                                                     :class="activeFilter === 'cat9' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
                                                     class="w-full text-left py-4 transition-colors">
                                                   #9 Einfach bauen
                                                 </button>
-                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#10 Qualität sichern'; dropdownOpen = false"
+                                                <button  type="button"  @click="activeFilter = 'cat10'; selectedCategoryName = '#10 Qualität sichern'; dropdownOpen = false"
                                                     :class="activeFilter === 'cat10' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
                                                     class="w-full text-left py-4 transition-colors">
                                                     #10 Qualität sichern
                                                 </button>
-                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#11 Transformation finanzieren'; dropdownOpen = false"
+                                                <button  type="button"  @click="activeFilter = 'cat11'; selectedCategoryName = '#11 Transformation finanzieren'; dropdownOpen = false"
                                                     :class="activeFilter === 'cat11' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
                                                     class="w-full text-left py-4 transition-colors">
                                                    #11 Transformation finanzieren
                                                 </button>
 
-                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#12 Beruf weiterentwickeln'; dropdownOpen = false"
+                                                <button  type="button"  @click="activeFilter = 'cat12'; selectedCategoryName = '#12 Beruf weiterentwickeln'; dropdownOpen = false"
                                                     :class="activeFilter === 'cat12' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
                                                     class="w-full text-left py-4 transition-colors">
                                                   #12 Beruf weiterentwickeln
@@ -633,7 +633,7 @@
                                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20 mt-35">
 
                                         <!-- CARD 1 (Category 1) -->
-                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat1'"
+                                        <div x-show="['all', 'cat1', 'cat2', 'cat8'].includes(activeFilter)"
                                             x-transition
                                             class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
 
@@ -645,10 +645,10 @@
                                                 <img src="assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
                                                  <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                <div class="wm_img">
-                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
                                                 </div>
-                                            </div>
                                             </div>
 
                                             <div class="absolute inset-0 flex items-end justify-center pt-10">
@@ -665,7 +665,7 @@
                                         </div>
 
                                         <!-- CARD 2 (Category 2) -->
-                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat2'"
+                                        <div x-show="['all', 'cat2', 'cat6', 'cat4'].includes(activeFilter)"
                                             x-transition
                                             class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
                                             <div class="block md:hidden absolute top-12 right-12 z-10">
@@ -677,8 +677,9 @@
                                                 <img src="assets/images/bg-speaker-3.webp" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
                                                  <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                <div class="wm_img">
-                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -696,7 +697,7 @@
                                         </div>
 
                                         <!-- CARD 3 (Category 3) -->
-                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat3'"
+                                        <div x-show="['all', 'cat3'].includes(activeFilter)"
                                             x-transition
                                             class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
                                             
@@ -708,8 +709,9 @@
                                                 <img src="assets/images/bg-speaker-2.png" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
                                                  <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                <div class="wm_img">
-                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -726,7 +728,7 @@
                                             </div>
                                         </div>
                                         <!-- CARD 4 (Category 4) -->
-                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat4'"
+                                        <div x-show="['all', 'cat4', 'cat6', 'cat3'].includes(activeFilter)"
                                                 x-transition
                                                 class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
                                             
@@ -739,8 +741,9 @@
                                                 <img src="assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
                                                  <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                <div class="wm_img">
-                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -758,7 +761,7 @@
                                         </div>
                                         
                                         <!-- CARD 5 (Category 5) -->
-                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat5'"
+                                        <div x-show="['all', 'cat5', 'cat6', 'cat4'].includes(activeFilter)"
                                                 x-transition
                                                 class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
                                             
@@ -771,8 +774,9 @@
                                                 <img src="assets/images/bg-speaker-3.webp" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
                                                  <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                <div class="wm_img">
-                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -790,7 +794,7 @@
                                         </div>
 
                                         <!-- CARD 6 (Category 6) -->
-                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat6'"
+                                        <div x-show="['all', 'cat6', 'cat3', 'cat4'].includes(activeFilter)"
                                                 x-transition
                                                 class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
                                             
@@ -803,8 +807,9 @@
                                                 <img src="assets/images/bg-speaker-2.png" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
                                                  <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                <div class="wm_img">
-                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -822,7 +827,7 @@
                                         </div>
 
                                         <!-- CARD 7 (Category 7) -->
-                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat7'"
+                                        <div x-show="['all', 'cat7', 'cat9', 'cat12'].includes(activeFilter)"
                                                 x-transition
                                                 class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
                                             
@@ -835,8 +840,9 @@
                                                 <img src="assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
                                                  <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                <div class="wm_img">
-                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -854,7 +860,7 @@
                                         </div>
                                         
                                         <!-- CARD 8 (Category 8) -->
-                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat8'"
+                                        <div x-show="['all', 'cat8', 'cat6', 'cat4'].includes(activeFilter)"
                                                 x-transition
                                                 class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
                                             
@@ -867,8 +873,9 @@
                                                 <img src="assets/images/bg-speaker-3.webp" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
                                                  <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                <div class="wm_img">
-                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -886,7 +893,7 @@
                                         </div>
 
                                         <!-- CARD 9 (Category 9) -->
-                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat9'"
+                                        <div x-show="['all', 'cat9', 'cat6', 'cat4'].includes(activeFilter)"
                                                 x-transition
                                                 class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
                                             
@@ -899,8 +906,9 @@
                                                 <img src="assets/images/bg-speaker-2.png" alt="Prof. Dr. Tanja Remke" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
                                                  <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                <div class="wm_img">
-                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -918,7 +926,7 @@
                                         </div>
 
                                         <!-- CARD 10 (Category 10) -->
-                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat10'"
+                                        <div x-show="['all', 'cat10', 'cat6', 'cat4'].includes(activeFilter)"
                                                 x-transition
                                                 class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
                                             
@@ -931,8 +939,75 @@
                                                 <img src="assets/images/bg-speaker-3.webp" alt="Franz Reschke" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
                                                  <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                <div class="wm_img">
-                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
+                                                <img src="assets/images/speaker-3.webp" alt="Van Bo Le-Mentzel" class="h-full w-full object-cover object-top">
+                                            </div>
+
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Franz<br> Reschke</h3>
+                                            </div>
+                                        </div>
+
+                                          <!-- CARD 11 (Category 11) -->
+                                        <div x-show="['all', 'cat11', 'cat6', 'cat4'].includes(activeFilter)"
+                                                x-transition
+                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
+                                            
+                                                <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+                                            
+
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/bg-speaker-2.png" alt="Prof. Dr. Tanja Remke" class="w-full h-full object-cover" />
+                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
+                                                <img src="assets/images/speaker-2.webp" alt="Van Bo Le-Mentzel" class="h-full w-full object-cover object-top">
+                                            </div>
+
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Prof. Dr. Tanja<br> Remke</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 12 (Category 12) -->
+                                        <div x-show="['all', 'cat12', 'cat6', 'cat4'].includes(activeFilter)"
+                                                x-transition
+                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
+                                            
+                                                <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+                                            
+
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/bg-speaker-3.webp" alt="Franz Reschke" class="w-full h-full object-cover" />
+                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
                                                 </div>
                                             </div>
 
