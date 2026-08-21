@@ -39,8 +39,8 @@
 @theme {
     --spacing: 1px;
     --spacing-gutter: clamp(1rem, 0.3959rem + 2.2742vw, 3.125rem); /* 16px to 50px */
-    --spacing-sec-sm: clamp(5rem, 4.2893rem + 2.6756vw, 7.5rem);   /* 80px to 120px */
-    --spacing-sec-lg: clamp(7.5rem, 6.4339rem + 4.0134vw, 11.25rem); /* 120px to 180px */
+    --spacing-sec-sm: clamp(3.75rem, 1.755rem + 6.383vw, 7.5rem);   /* 60px to 120px */
+   --spacing-sec-lg: clamp(5rem, 3.2232rem + 6.689vw, 11.25rem);/* 80px to 180px */
 
     --breakpoint-*: initial;
     --container-*: initial;
@@ -59,6 +59,10 @@
 
     --font-tabular: "Tabular";
     --font-inter: "Inter Tight";
+
+    /* Body Small / Alternative Text */
+--text-body-sm: clamp(0.9375rem, 0.9197rem + 0.0702vw, 1rem); /* min: 15px | max: 16px */
+--text-body-sm--line-height: clamp(1.40625rem, 1.3795rem + 0.1054vw, 1.5rem); /* min: 22.5px | max: 24px */
 
   /* Body Text */
 --text-body: clamp(0.9375rem, 0.8842rem + 0.2107vw, 1.125rem); /* min: 15px | max: 18px */
@@ -252,6 +256,9 @@ body { -webkit-hyphens: auto;
     .free_text ul{
         @apply list-disc pl-20
     }
+    .col:has(.swiper) {
+  @apply min-w-0;
+}
 }
 
 .marquee_item {
@@ -300,7 +307,19 @@ form.success .btn {
 form.success .btn svg {
     @apply text-[#52C64B]
 }
-
+/* Gradient on every even row */
+table tbody tr:not([hidden]):nth-child(even) {
+  @apply bg-grdnt-left;
+}
+table tbody tr:nth-child(odd) td:not(:last-child) {
+  border-right: 1px solid #00000033;
+}
+table tbody tr >  td:first-child {
+    @apply w-135 md:w-[30%] text-center md:text-end
+}
+table tbody tr td{
+    @apply font-medium text-body-sm sm:text-h4-std py-18 sm:py-20 px-24 sm:px-30 [&_span]:font-normal [&_span]:text-body-sm [&_span]:font-inter [&_p]:font-normal [&_p]:text-body-sm [&_p]:font-inter [&_a]:font-normal [&_a]:text-body-sm [&_a]:font-inter
+}
 .arrow {
     --dur: 1.8s;
     --gap: 0.2s;
@@ -423,7 +442,9 @@ ul li a[aria-current="page"] .svg-hover {
 @utility bg-grdnt-1 {
     @apply bg-linear-0 from-orange to-pink
 }
-
+@utility bg-grdnt-left {
+  background: linear-gradient(270deg, rgba(216, 145, 250, 0.85) 0%, rgba(254, 132, 5, 0.85) 100%);
+}
 @utility bg-grdnt-2 {
     mask-image: linear-gradient(0deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
 }
@@ -448,6 +469,7 @@ ul li a[aria-current="page"] .svg-hover {
 }
 
 
+
 /* common css */
 @media (max-width:440px){
 .swiper-button-prev-custom, .swiper-button-next-custom{
@@ -458,4 +480,5 @@ ul li a[aria-current="page"] .svg-hover {
 .swiper-button-prev-custom, .swiper-button-next-custom{
     top:56%;
 }
+
 }

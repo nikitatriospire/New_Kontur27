@@ -170,3 +170,90 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modal) closeModal();
     });
 });
+
+
+// ---------------------------------------------------------
+// Agenda Image Height  
+// ---------------------------------------------------------
+ function alignMediaBox() {
+        if (window.innerWidth < 1024) return; // Only execute on desktop screens
+
+        const table = document.getElementById('scheduleTable');
+        const mediaBox = document.getElementById('mediaBox');
+
+        // Select 2nd row & 2nd to last row
+        const startRow = table.querySelector('tr:nth-child(2)');
+        const endRow = table.querySelector('tr:nth-last-child(2)');
+
+        if (startRow && endRow && mediaBox) {
+            const tableTop = table.getBoundingClientRect().top;
+            const startTop = startRow.getBoundingClientRect().top;
+            const endBottom = endRow.getBoundingClientRect().bottom;
+
+            // Calculate precise top offset and total height
+            const topOffset = startTop - tableTop;
+            const totalHeight = endBottom - startTop;
+
+            // Apply calculated pixel values
+            mediaBox.style.marginTop = `${topOffset}px`;
+            mediaBox.style.height = `${totalHeight}px`;
+        }
+    }
+
+    // Run on load, images load, and window resize
+    window.addEventListener('load', alignMediaBox);
+    window.addEventListener('resize', alignMediaBox);
+// ---------------------------------------------------------
+// FOR TABLE HIDE ROW
+// ---------------------------------------------------------
+(function () {
+    // Stores detached rows and their original DOM positions
+    const detachedRows = [];
+
+    function handleMobileRows() {
+        const isMobile = window.innerWidth < 640;
+        const table = document.getElementById('scheduleTable');
+        if (!table) return;
+
+        if (isMobile) {
+            // Find all rows marked for hiding on mobile
+            const rowsToHide = table.querySelectorAll('tr[data-mobile-hide="true"]');
+
+            rowsToHide.forEach(row => {
+                // Save original position & parent reference
+                detachedRows.push({
+                    element: row,
+                    nextSibling: row.nextElementSibling,
+                    parent: row.parentNode
+                });
+                // Completely detach from DOM so CSS :nth-child re-indexes properly
+                row.remove();
+            });
+        } else {
+            // Re-insert detached rows back into their original DOM positions
+            while (detachedRows.length > 0) {
+                const item = detachedRows.pop();
+                if (item.nextSibling && item.parent.contains(item.nextSibling)) {
+                    item.parent.insertBefore(item.element, item.nextSibling);
+                } else {
+                    item.parent.appendChild(item.element);
+                }
+            }
+        }
+    }
+
+    // Run on initial page load
+    window.addEventListener('DOMContentLoaded', handleMobileRows);
+
+    // Run on window resize with an animation frame throttle to prevent lagging
+    let isResizing = false;
+    window.addEventListener('resize', () => {
+        if (!isResizing) {
+            requestAnimationFrame(() => {
+                handleMobileRows();
+                isResizing = false;
+            });
+            isResizing = true;
+        }
+    });
+})();
