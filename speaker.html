@@ -528,7 +528,7 @@
                                     selectedCategoryName: 'Nach Fachforen sortieren' }">
 
                                     <!-- FILTER BUTTONS BAR -->
-                                    <div class="flex items-center gap-16 sm:gap-24 lg:gap-43 text-[12px] xsm:text-sm sm:text-body font-tabular font-medium mb-10 relative z-30">
+                                    <div class="w-full flex justify-between sm:justify-start items-center gap-16 sm:gap-24 lg:gap-43 text-[13px] xsm:text-sm sm:text-body font-tabular font-medium mb-10 relative z-30">
                                         
                                         <!-- BUTTON 1: ALL -->
                                         <button type="button"
@@ -544,10 +544,10 @@
                                                 type="button"
                                                 @click="dropdownOpen = !dropdownOpen"
                                                 :class="activeFilter !== 'all' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                class="flex items-center gap-10 transition-colors pl-0 sm:pl-30 pr-0 sm:pr-30 lg:pr-72">
+                                                class="flex items-center gap-10 transition-colors pl-8 sm:pl-30 pr-8 sm:pr-30 lg:pr-72">
                                                 <span x-text="selectedCategoryName"></span>
                                                  
-                                                <svg class="w-16 h-18 stroke-current transition-transform duration-200" :class="{ 'rotate-180': dropdownOpen }" width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="w-14 sm:w-16 h-18 stroke-current transition-transform duration-200" :class="{ 'rotate-180': dropdownOpen }" width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M10 1.26358L5.57796 3L4.4086 3L4.4086 2.99812L2.18025e-08 1.17168L3.57747e-08 -7.15256e-07L4.98656 2.03321L10 0.0574352L10 1.26358Z" fill="black"/>
                                                 </svg>
 
@@ -556,13 +556,13 @@
                                             <!-- HARDCODED DROPDOWN LIST -->
                                             <div  x-show="dropdownOpen"
                                                 x-transition
-                                                class="absolute left-0 mt-8 w-full bg-white shadow-2xl z-50 text-body font-tabular flex flex-col gap-12 py-12 px-16"
+                                                class="absolute left-0 mt-8 w-full bg-white shadow-2xl z-50 text-[13px] sm:text-body font-tabular flex flex-col gap-6 sm:gap-12 py-12 px-16"
                                                 style="display: none;">
                                                 
                                                 <button type="button"
                                                     @click="activeFilter = 'cat1'; selectedCategoryName = '#1 Bestand weiterbauen'; dropdownOpen = false"
                                                     :class="activeFilter === 'cat1' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                    class="w-full text-left py-8 transition-colors">
+                                                    class="w-full text-left py-4 transition-colors">
                                                     #1 Bestand weiterbauen
                                                 </button>
 
@@ -644,6 +644,11 @@
                                             <div class="absolute inset-0 w-full h-full">
                                                 <img src="assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                <div class="wm_img">
+                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                </div>
+                                            </div>
                                             </div>
 
                                             <div class="absolute inset-0 flex items-end justify-center pt-10">
@@ -654,7 +659,7 @@
                                                 <i data-lucide="plus" class="size-52 text-white"></i>  
                                             </div>
 
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
                                                 <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Dr. Friederike <br> Maus</h3>
                                             </div>
                                         </div>
@@ -671,6 +676,10 @@
                                             <div class="absolute inset-0 w-full h-full">
                                                 <img src="assets/images/bg-speaker-3.webp" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                <div class="wm_img">
+                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                </div>
                                             </div>
 
                                             <div class="absolute inset-0 flex items-end justify-center pt-10">
@@ -681,7 +690,7 @@
                                                 <i data-lucide="plus" class="size-52 text-white"></i>  
                                             </div>
 
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
                                                 <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Heike <br>Blohm-Schröder</h3>
                                             </div>
                                         </div>
@@ -698,6 +707,10 @@
                                             <div class="absolute inset-0 w-full h-full">
                                                 <img src="assets/images/bg-speaker-2.png" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                <div class="wm_img">
+                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                </div>
                                             </div>
 
                                             <div class="absolute inset-0 flex items-end justify-center pt-10">
@@ -708,7 +721,7 @@
                                                 <i data-lucide="plus" class="size-52 text-white"></i>  
                                             </div>
 
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
                                                 <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Katja <br> Domschky</h3>
                                             </div>
                                         </div>
@@ -725,6 +738,10 @@
                                             <div class="absolute inset-0 w-full h-full">
                                                 <img src="assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                <div class="wm_img">
+                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                </div>
                                             </div>
 
                                             <div class="absolute inset-0 flex items-end justify-center pt-10">
@@ -735,7 +752,7 @@
                                                 <i data-lucide="plus" class="size-52 text-white"></i>  
                                             </div>
 
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
                                                 <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Dr. Markus <br> Gabriel</h3>
                                             </div>
                                         </div>
@@ -753,6 +770,10 @@
                                             <div class="absolute inset-0 w-full h-full">
                                                 <img src="assets/images/bg-speaker-3.webp" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                <div class="wm_img">
+                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                </div>
                                             </div>
 
                                             <div class="absolute inset-0 flex items-end justify-center pt-10">
@@ -763,7 +784,7 @@
                                                 <i data-lucide="plus" class="size-52 text-white"></i>  
                                             </div>
 
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
                                                 <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Prof. Dr. Linda <br> Hildebrand</h3>
                                             </div>
                                         </div>
@@ -781,6 +802,10 @@
                                             <div class="absolute inset-0 w-full h-full">
                                                 <img src="assets/images/bg-speaker-2.png" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                <div class="wm_img">
+                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                </div>
                                             </div>
 
                                             <div class="absolute inset-0 flex items-end justify-center pt-10">
@@ -791,7 +816,7 @@
                                                 <i data-lucide="plus" class="size-52 text-white"></i>  
                                             </div>
 
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
                                                 <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Jette Cathrin<br> Hopp</h3>
                                             </div>
                                         </div>
@@ -809,6 +834,10 @@
                                             <div class="absolute inset-0 w-full h-full">
                                                 <img src="assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                <div class="wm_img">
+                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                </div>
                                             </div>
 
                                             <div class="absolute inset-0 flex items-end justify-center pt-10">
@@ -819,7 +848,7 @@
                                                 <i data-lucide="plus" class="size-52 text-white"></i>  
                                             </div>
 
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
                                                 <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Van Bo<br> Le-Mentzel</h3>
                                             </div>
                                         </div>
@@ -837,6 +866,10 @@
                                             <div class="absolute inset-0 w-full h-full">
                                                 <img src="assets/images/bg-speaker-3.webp" alt="" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                <div class="wm_img">
+                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                </div>
                                             </div>
 
                                             <div class="absolute inset-0 flex items-end justify-center pt-10">
@@ -847,7 +880,7 @@
                                                 <i data-lucide="plus" class="size-52 text-white"></i>  
                                             </div>
 
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
                                                 <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Stefan<br> Postert</h3>
                                             </div>
                                         </div>
@@ -865,6 +898,10 @@
                                             <div class="absolute inset-0 w-full h-full">
                                                 <img src="assets/images/bg-speaker-2.png" alt="Prof. Dr. Tanja Remke" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                <div class="wm_img">
+                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                </div>
                                             </div>
 
                                             <div class="absolute inset-0 flex items-end justify-center pt-10">
@@ -875,7 +912,7 @@
                                                 <i data-lucide="plus" class="size-52 text-white"></i>  
                                             </div>
 
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
                                                 <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Prof. Dr. Tanja<br> Remke</h3>
                                             </div>
                                         </div>
@@ -893,6 +930,10 @@
                                             <div class="absolute inset-0 w-full h-full">
                                                 <img src="assets/images/bg-speaker-3.webp" alt="Franz Reschke" class="w-full h-full object-cover" />
                                                 <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                <div class="wm_img">
+                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                </div>
                                             </div>
 
                                             <div class="absolute inset-0 flex items-end justify-center pt-10">
@@ -903,7 +944,7 @@
                                                 <i data-lucide="plus" class="size-52 text-white"></i>  
                                             </div>
 
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
                                                 <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Franz<br> Reschke</h3>
                                             </div>
                                         </div>
@@ -913,7 +954,7 @@
                             </div>
 
                             <!-- Add more button -->
-                             <a href="https://p711910.webspaceconfig.de/agenda" class="btn btn-light mt-15 mx-auto">
+                             <a href="/" class="btn btn-light mt-15 mx-auto">
                                         <span>Weitere laden</span>
                                         <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor"></path>
