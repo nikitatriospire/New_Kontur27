@@ -117,6 +117,22 @@ document.addEventListener('alpine:init', () => {
 lucide.createIcons();
 
 
+
+// ---------------------------------------------------------
+// SWIPER
+// ---------------------------------------------------------
+ const speakerSwiper = new Swiper('.speakerSwiper', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  speed: 800,
+  parallax: true, // Requires adding data-swiper-parallax attributes to HTML elements
+  navigation: {
+    nextEl: '.swiper-button-next-custom',
+    prevEl: '.swiper-button-prev-custom',
+  },
+});
+
 // ---------------------------------------------------------
 // CARD POPUP
 // ---------------------------------------------------------

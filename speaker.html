@@ -925,7 +925,7 @@
         </section>
        <!-- modal popup -->
         <div id="modal-popup" class="hidden w-full h-screen fixed top-0 z-999999 xl:z-10  bg-black md:bg-[#000000CC] flex-col lg:flex-row overflow-y-auto">
-            <div class="relative lg:w-1/2 h-full">
+            <div class="relative lg:w-1/2 max-h-505 h-full sm:max-h-full">
                 <a href="#" id="close-modal-btn" class="lg:hidden w-65 h-65 bg-[#000000B2] rounded-full absolute top-53 right-25 flex justify-center items-center">
                             <svg class="w-32 xl:w-43 h-32 xl:h-43" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M31.7459 10.5312L10.6836 31.8943" stroke="#ffffff" stroke-width="1.55436" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1099,19 +1099,7 @@
     <script src="assets/js/lucide.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
-<script>
- const speakerSwiper = new Swiper('.speakerSwiper', {
-  slidesPerView: 1,
-  spaceBetween: 0,
-  loop: true,
-  speed: 800,
-  parallax: true, // Requires adding data-swiper-parallax attributes to HTML elements
-  navigation: {
-    nextEl: '.swiper-button-next-custom',
-    prevEl: '.swiper-button-prev-custom',
-  },
-});
-</script>
+
 </body>
 
 </html>
