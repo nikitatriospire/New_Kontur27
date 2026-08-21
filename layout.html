@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="KONTUR 2027 ist der neue Kongress für Architektur und Stadtgestaltung in Nordrhein-Westfalen. ">
+
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>KONTUR 27 Kongress für Architektur und Stadtplanung</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <script defer src="assets/js/alpine.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body class="not-md:pb-96">
+
+    <div x-data="{open: false}">
+        <div
+            class="fixed right-0 not-xl:top-0 xl:bottom-0 p-25 xl:p-30 not-xl:pt-55 flex flex-col gap-10 items-end z-999999">
+            <button @click="open = !open" :class="open ? 'bg-white/70' : 'bg-black/70'"
+                class="size-65 rounded-full relative z-1 grid place-items-center backdrop-blur-xs xl:hidden">
+                <img src="assets/icons/left-arrows.svg" alt="" class="transition-slow"
+                    :class="open && 'invert scale-x-[-1]'">
+            </button>
+            <div class="relative flex items-center gap-15 font-medium font-tabular group transition-slow cursor-pointer"
+                :class="open && 'opacity-0'" title="Tickets">
+                <div
+                    class="text-black absolute transition-slow pr-10 right-0 group-hover:right-full opacity-0 group-hover:opacity-100 text-shadow-sm text-shadow-white">
+                    Tickets
+                </div>
+                <button class="size-65 rounded-full relative z-1 group overflow-hidden grid place-items-center">
+                    <img src="assets/icons/ticket.svg" alt=""
+                        class="brightness-0 invert group-hover:brightness-[unset] group-hover:invert-[unset] transition-slow">
+                    <div
+                        class="bg-black/0 group-hover:bg-black/70 absolute inset-0 -z-1 transition-slow backdrop-blur-xs">
+                    </div>
+                    <div
+                        class="bg-grdnt-1 opacity-70 absolute inset-0 -z-1 group-hover:opacity-0 transition-slow backdrop-blur-xs">
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div x-cloak :class="open ? 'translate-x-0' : 'translate-x-full'"
+            class="fixed inset-0 w-dvw h-dvh z-99999 bg-white transition-slow pt-55 flex flex-col gap-75">
+            <button @click="open = !open" :class="open ? 'bg-white/70' : 'bg-black/70'"
+                class="size-65 rounded-full relative z-1 grid place-items-center backdrop-blur-xs shrink-0">
+                <img src="assets/icons/home.svg" alt="">
+            </button>
+            <div class="grow text-h2-std uppercase font-tabular font-normal pl-20 flex items-center overflow-y-auto">
+                <ul class="flex flex-col gap-45 max-h-full">
+                    <li>
+                        <a href="/" class="flex items-center gap-18">
+                            <svg width="11" height="31" viewBox="0 0 11 31" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4.63312 1.35074e-06L11 13.7083L11 17.3333L10.9931 17.3333L4.29616 31L-2.86102e-06 31L7.45511 15.5417L0.210598 9.64109e-07L4.63312 1.35074e-06Z"
+                                    fill="black" />
+                            </svg>
+                            <span>Agenda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" class="flex items-center gap-18">
+                            <svg width="11" height="31" viewBox="0 0 11 31" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4.63312 1.35074e-06L11 13.7083L11 17.3333L10.9931 17.3333L4.29616 31L-2.86102e-06 31L7.45511 15.5417L0.210598 9.64109e-07L4.63312 1.35074e-06Z"
+                                    fill="black" />
+                            </svg>
+                            <span>SPEAKER</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" class="flex items-center gap-18">
+                            <svg width="11" height="31" viewBox="0 0 11 31" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4.63312 1.35074e-06L11 13.7083L11 17.3333L10.9931 17.3333L4.29616 31L-2.86102e-06 31L7.45511 15.5417L0.210598 9.64109e-07L4.63312 1.35074e-06Z"
+                                    fill="black" />
+                            </svg>
+                            <span>LOCATION</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" class="flex items-center gap-18">
+                            <svg width="11" height="31" viewBox="0 0 11 31" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4.63312 1.35074e-06L11 13.7083L11 17.3333L10.9931 17.3333L4.29616 31L-2.86102e-06 31L7.45511 15.5417L0.210598 9.64109e-07L4.63312 1.35074e-06Z"
+                                    fill="black" />
+                            </svg>
+                            <span>FAQ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" class="flex items-center gap-18">
+                            <svg width="11" height="31" viewBox="0 0 11 31" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4.63312 1.35074e-06L11 13.7083L11 17.3333L10.9931 17.3333L4.29616 31L-2.86102e-06 31L7.45511 15.5417L0.210598 9.64109e-07L4.63312 1.35074e-06Z"
+                                    fill="black" />
+                            </svg>
+                            <span>TICKETS</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="p-30 relative bg-grdnt-1 text-white">
+                <img src="assets/images/logo-lg.svg" alt="" width="245">
+                <p class="mt-45 mb-10 text-xs font-tabular">
+                    Veranstaltet durch:
+                </p>
+                <div class="flex items-center justify-between">
+                    <img src="assets/images/brand2.png" alt="">
+                    <img src="assets/images/brand1.png" alt="">
+                </div>
+            </div>
+            <div class="absolute inset-0 -z-1 mix-blend-difference translate-x-1/2">
+                <video poster="assets/images/hero-poster.webp" autoplay muted loop playsinline
+                    class="size-full object-cover" preload="metadata">
+                    <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <main>
+
+        <section class="ctm_sec py-sec-lg text-white">
+
+            <div class="container">
+                <div class="component">
+                    <div class="flex justify-between gap-25 xl:gap-50 items-start">
+                        <div>
+                            <div class="flex flex-col gap-20 xl:gap-40 max-w-1000">
+                                <h2 class="text-h2-highlight">
+                                    <b>KONTUR 2027</b> ist der neue Kongress für Architektur und Stadtgestaltung in
+                                    Nordrhein-Westfalen.
+                                </h2>
+                                <div class="free_text mb-20 space-y-40">
+                                    <p>
+                                        Wie wollen wir morgen leben, bauen und unsere Städte gestalten? Kontur 2027
+                                        widmet sich den zentralen Zukunftsfragen unserer gebauten Umwelt und bringt
+                                        Menschen zusammen, die Verantwortung für die Entwicklung lebenswerter Räume
+                                        übernehmen.
+                                    </p>
+                                    <p>
+                                        Im Fokus stehen Themen wie nachhaltiges Bauen, soziale Teilhabe, Künstliche
+                                        Intelligenz, Digitalisierung und innovative Stadtentwicklung. In inspirierenden
+                                        Vorträgen, Diskussionen und Begegnungen entstehen neue Impulse, die weit über
+                                        einzelne Fachdisziplinen hinausreichen - für eine Architektur und Planung, die
+                                        den Herausforderungen unserer Zeit mit Weitblick begegnet.
+                                    </p>
+                                    <p>
+                                        <b>
+                                            Ausgewählte Fachforen sind als Fortbildungsveranstaltungen anerkannt und
+                                            ermöglichen den Erwerb von Fortbildungspunkten.
+                                        </b>
+                                    </p>
+                                </div>
+                                <a href="/" class="btn btn-light">
+                                    <span>Jetzt Tickets sichern</span>
+                                    <svg width="7" height="18" viewBox="0 0 7 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="w-96 xl:w-163 mt-60 xl:mt-sec-sm">
+                                <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="164" height="171"
+                                    viewBox="0 0 164 171" aria-hidden="true">
+                                    <defs>
+                                        <linearGradient id="arrowDownGradient" x1="7.653" y1="0" x2="163.653" y2="0"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D792FF" />
+                                            <stop offset="1" stop-color="#FFA442" />
+                                        </linearGradient>
+                                    </defs>
+                                    <g fill="url(#arrowDownGradient)">
+                                        <path class="chev chev-1"
+                                            d="M163.707 23.9365L91.3152 56.8301L72.172 56.8301L72.172 56.7945L0 22.1956L0 0L81.6336 38.5159L163.707 1.08812L163.707 23.9365Z" />
+                                        <path class="chev chev-2"
+                                            d="M163.707 80.7607L91.3152 113.654L72.172 113.654L72.172 113.619L0 79.0198L0 56.8243L81.6336 95.3401L163.707 57.9123L163.707 80.7607Z" />
+                                        <path class="chev chev-3"
+                                            d="M163.707 137.596L91.3152 170.49L72.172 170.49L72.172 170.454L0 135.856L0 113.66L81.6336 152.176L163.707 114.748L163.707 137.596Z" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="rotate-180 text-h1 uppercase text-vertical">
+                            <h3 class="min-h-max">
+                                Räume für die Gesellschaft.
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sec_bg">
+                <img src="assets/images/hero-poster.webp" alt="">
+                <!-- <video src="assets/videos/hero-bg.mp4" autoplay loop playsinline muted></video> -->
+                <!-- <div class="bg-grdnt-1"></div> -->
+            </div>
+
+            <div class="overlay" style="background-color: rgba(0,0,0,.75);"></div>
+
+        </section>
+
+        <section class="ctm_sec py-sec-lg" style="background-color: #000; color: #fff;">
+            <div class="container">
+                <div class="component">
+                    <div class="flex justify-between gap-25 xl:gap-50 items-start">
+                        <div>
+                            <div class="flex flex-col gap-20 xl:gap-40 max-w-1000">
+                                <h2 class="text-h2-highlight">
+                                    <b>KONTUR 2027</b> ist der neue Kongress für Architektur und Stadtgestaltung in
+                                    Nordrhein-Westfalen.
+                                </h2>
+                                <div class="free_text mb-20 space-y-40">
+                                    <p>
+                                        Wie wollen wir morgen leben, bauen und unsere Städte gestalten? Kontur 2027
+                                        widmet sich den zentralen Zukunftsfragen unserer gebauten Umwelt und bringt
+                                        Menschen zusammen, die Verantwortung für die Entwicklung lebenswerter Räume
+                                        übernehmen.
+                                    </p>
+                                    <p>
+                                        Im Fokus stehen Themen wie nachhaltiges Bauen, soziale Teilhabe, Künstliche
+                                        Intelligenz, Digitalisierung und innovative Stadtentwicklung. In inspirierenden
+                                        Vorträgen, Diskussionen und Begegnungen entstehen neue Impulse, die weit über
+                                        einzelne Fachdisziplinen hinausreichen - für eine Architektur und Planung, die
+                                        den Herausforderungen unserer Zeit mit Weitblick begegnet.
+                                    </p>
+                                    <p>
+                                        <b>
+                                            Ausgewählte Fachforen sind als Fortbildungsveranstaltungen anerkannt und
+                                            ermöglichen den Erwerb von Fortbildungspunkten.
+                                        </b>
+                                    </p>
+                                </div>
+                                <a href="/" class="btn btn-light">
+                                    <span>Jetzt Tickets sichern</span>
+                                    <svg width="7" height="18" viewBox="0 0 7 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="w-96 xl:w-163 mt-60 xl:mt-sec-sm">
+                                <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="164" height="171"
+                                    viewBox="0 0 164 171" aria-hidden="true">
+                                    <defs>
+                                        <linearGradient id="arrowDownGradient" x1="7.653" y1="0" x2="163.653" y2="0"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D792FF" />
+                                            <stop offset="1" stop-color="#FFA442" />
+                                        </linearGradient>
+                                    </defs>
+                                    <g fill="url(#arrowDownGradient)">
+                                        <path class="chev chev-1"
+                                            d="M163.707 23.9365L91.3152 56.8301L72.172 56.8301L72.172 56.7945L0 22.1956L0 0L81.6336 38.5159L163.707 1.08812L163.707 23.9365Z" />
+                                        <path class="chev chev-2"
+                                            d="M163.707 80.7607L91.3152 113.654L72.172 113.654L72.172 113.619L0 79.0198L0 56.8243L81.6336 95.3401L163.707 57.9123L163.707 80.7607Z" />
+                                        <path class="chev chev-3"
+                                            d="M163.707 137.596L91.3152 170.49L72.172 170.49L72.172 170.454L0 135.856L0 113.66L81.6336 152.176L163.707 114.748L163.707 137.596Z" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="rotate-180 text-h1 uppercase text-vertical">
+                            <h3 class="min-h-max">
+                                Räume für die Gesellschaft.
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ctm_sec my-sec-lg">
+            <div class="container">
+                <div class="row cols_1">
+                    <div class="col">
+                        <h1 class="heading_1">
+                            Lorem ipsum dolor sit amet.
+                        </h1>
+                        <p class="ctm_paragraph">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam soluta sed harum quae
+                            ratione veniam adipisci, delectus tenetur maiores natus minus nisi quo maxime, esse
+                            accusamus! Recusandae eum itaque commodi!
+                        </p>
+                        <ul class="ctm_list">
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                        </ul>
+                        <blockquote class="ctm_blockquote">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia atque velit, expedita porro
+                            soluta hic sint, nisi eum, rerum omnis aut vitae facilis assumenda deserunt veritatis
+                            sapiente facere laudantium. Placeat.
+                            <footer>
+                                - Vinit Viradiya
+                            </footer>
+                        </blockquote>
+                        <div class="ctm_divider">
+                            <hr>
+                        </div>
+                        <div class="ctm_code">
+                            <pre><code>.ctm_code{
+    @apply bg-black/90 text-white p-16
+}</code></pre>
+                        </div>
+                        <div class="ctm_image">
+                            <img src="assets/images/city.webp" alt="">
+                        </div>
+                        <div class="ctm_video" hidden>
+                            <video src="assets/videos/hero-bg.mp4" autoplay muted loop></video>
+                        </div>
+                        <a href="/" class="btn btn-light">
+                            <span>Jetzt Tickets sichern</span>
+                            <svg width="7" height="18" viewBox="0 0 7 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ctm_sec my-sec-lg">
+            <div class="container">
+                <div class="row cols_1_1">
+                    <div class="col">
+                        <h2 class="heading_2">
+                            Lorem ipsum dolor sit amet.
+                        </h2>
+                        <p class="paragraph">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam soluta sed harum quae
+                            ratione veniam adipisci, delectus tenetur maiores natus minus nisi quo maxime, esse
+                            accusamus! Recusandae eum itaque commodi!
+                        </p>
+                        <a href="/" class="btn btn-light">
+                            <span>Jetzt Tickets sichern</span>
+                            <svg width="7" height="18" viewBox="0 0 7 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <h2 class="heading_2">
+                            Lorem ipsum dolor sit amet.
+                        </h2>
+                        <p class="paragraph">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam soluta sed harum quae
+                            ratione veniam adipisci, delectus tenetur maiores natus minus nisi quo maxime, esse
+                            accusamus! Recusandae eum itaque commodi!
+                        </p>
+                        <a href="/" class="btn btn-light">
+                            <span>Jetzt Tickets sichern</span>
+                            <svg width="7" height="18" viewBox="0 0 7 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ctm_sec my-sec-lg">
+            <div class="container">
+                <div class="row cols_1_2">
+                    <div class="col">
+                        <img src="assets/images/city.webp" alt="">
+                    </div>
+                    <div class="col">
+                        <h2 class="heading_2">
+                            Lorem ipsum dolor sit amet.
+                        </h2>
+                        <p class="paragraph">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam soluta sed harum quae
+                            ratione veniam adipisci, delectus tenetur maiores natus minus nisi quo maxime, esse
+                            accusamus! Recusandae eum itaque commodi!
+                        </p>
+                        <a href="/" class="btn btn-light">
+                            <span>Jetzt Tickets sichern</span>
+                            <svg width="7" height="18" viewBox="0 0 7 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ctm_sec my-sec-lg">
+            <div class="container">
+                <div class="row cols_2_1">
+                    <div class="col">
+                        <h2 class="heading_2">
+                            Lorem ipsum dolor sit amet.
+                        </h2>
+                        <p class="paragraph">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam soluta sed harum quae
+                            ratione veniam adipisci, delectus tenetur maiores natus minus nisi quo maxime, esse
+                            accusamus! Recusandae eum itaque commodi!
+                        </p>
+                        <a href="/" class="btn btn-light">
+                            <span>Jetzt Tickets sichern</span>
+                            <svg width="7" height="18" viewBox="0 0 7 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <img src="assets/images/city.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="relative z-1 py-sec-sm text-white">
+        <div class="container">
+            <div class="flex not-md:flex-col justify-between gap-45">
+                <div class="md:w-1/2 lg:w-1/3 flex flex-col gap-60">
+                    <a href="/">
+                        <img src="assets/images/logo-lg.svg" alt="">
+                    </a>
+                    <p>
+                        Der Kongress für Architektur und Stadtgestaltung in Nordrhein-Westfalen - mit Fokus auf
+                        nachhaltiges Bauen, Stadtentwicklung, KI und die Räume von morgen.
+                    </p>
+                </div>
+                <div
+                    class="md:w-1/2 lg:w-1/3 uppercase font-tabular flex gap-60 justify-between items-end font-semibold">
+                    <nav class="flex flex-col gap-12 xl:gap-60">
+                        <ul class="flex flex-col gap-12 xl:gap-24">
+                            <li>
+                                <a href="/">
+                                    Agenda
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/">
+                                    SPEAKER
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/">
+                                    Location
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/">
+                                    FAQ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/">
+                                    TICKETS
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="not-md:flex-col flex gap-12 xl:gap-24">
+                            <li>
+                                <a href="/">
+                                    Impressum
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/">
+                                    Datenschutz
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="flex flex-col gap-20 xl:gap-24">
+                        <a href="#" target="_blank">
+                            <img src="assets/icons/instagram.svg" alt="" class="not-md:w-20">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="assets/icons/facebook.svg" alt="" class="not-md:w-20">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 -z-1 brightness-70">
+            <video poster="assets/images/hero-poster.webp" autoplay muted loop playsinline
+                class="size-full object-cover scale-x-[-1]" preload="metadata">
+                <!-- Add .mp4 file for better browser support -->
+                <!-- <source src="assets/videos/hero-bg.mp4" type="video/mp4"> -->
+                <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="absolute bg-grdnt-1 inset-0 -z-1 mix-blend-difference"></div>
+    </footer>
+
+    <a href="/" class="btn-pink p-30 fixed inset-0 top-auto w-full text-h2-std md:hidden z-9999">
+        JETZT TICKETS SICHERN
+    </a>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

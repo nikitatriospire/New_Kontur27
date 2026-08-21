@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="KONTUR 2027 ist der neue Kongress für Architektur und Stadtgestaltung in Nordrhein-Westfalen. ">
+
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>KONTUR 27 Kongress für Architektur und Stadtplanung</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <script defer src="assets/js/alpine.js"></script>
+
+    <link rel="stylesheet" href="assets/css/swiper.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body class="not-md:pb-96">
+
+    <header x-data="{ scrolled: false }"
+        x-init="scrolled = window.scrollY > 100" 
+        @scroll.window.passive="scrolled = window.scrollY > 100"
+        :class="scrolled ? 'bg-black/35' : 'bg-black/40'"
+        class="z-99999 fixed top-0 inset-x-0 pl-20 xl:pl-38 4xl:pl-[calc((100%-1500px)/2)] uppercase backdrop-blur-[3px] text-white not-xl:hidden transition-colors duration-300">
+        <div class="flex gap-25 2xl:gap-50">
+            <div class="flex items-center justify-between py-20 xl:py-38 gap-50 2xl:gap-100 grow">
+                <a href="/" aria-label="KONTUR 27" class="shrink-0">
+                    <img src="assets/images/logo.svg" alt="KONTUR 27">
+                </a>
+                <nav class="main_navigation grow overflow-x-auto scrollbar-none">
+                    <ul class="flex gap-25 2xl:gap-50 font-tabular font-semibold justify-end">
+                        <li>
+                            <a href="#">
+                                Agenda
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Speaker
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Location
+                            </a>
+                        </li>
+                        <li>
+                            <a href="faq.html">
+                                FAQ
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="shrink-0">
+                <a href="/" class="btn-pink h-full py-40 px-55">
+                    JETZT TICKETS SICHERN
+                </a>
+            </div>
+        </div>
+    </header>
+
+     <div x-data="{open: false}">
+        <!-- Soft Backdrop Overlay -->
+            <div x-cloak
+                x-show="open" 
+                x-transition:enter="transition-opacity duration-700 ease-out"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition-opacity duration-500 ease-in"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                @click="open = false" 
+                class="fixed inset-0 bg-black/40 z-99998 backdrop-blur-xs xl:hidden">
+            </div>
+            <!-- Floating Header Controls -->
+            <div
+                class="fixed right-0 not-xl:top-0 xl:bottom-0 p-25 xl:p-30 not-xl:pt-55 flex flex-col gap-10 items-end z-999999">
+                <button @click="open = !open" 
+                :class="open ? 'bg-white/70' : 'bg-black/70'"
+                class="size-65 rounded-full relative z-1 grid place-items-center backdrop-blur-xs xl:hidden transition-colors duration-500">
+                    <img src="assets/icons/left-arrows.svg" alt="" class="transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                    :class="open && 'invert scale-x-[-1]'">
+                </button>
+                <a href="#" class="relative flex items-center gap-15 font-medium font-tabular group transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] cursor-pointer" 
+                :class="open ? 'opacity-0 pointer-events-none' : 'opacity-100'"
+                    title="Tickets">
+                    <div
+                        class="w-max text-black absolute transition-all duration-300 pr-10 right-0 group-hover:right-full opacity-0 group-hover:opacity-100 text-shadow-1">
+                        Tickets
+                    </div>
+                    <span aria-label="Tickets"
+                        class="size-65 rounded-full relative z-1 group overflow-hidden grid place-items-center border border-transparent group-hover:border-white transition-all duration-300">
+                        <img src="assets/icons/ticket.svg" alt=""
+                            class="brightness-0 invert group-hover:brightness-[unset] group-hover:invert-[unset] transition-all duration-300">
+                        <span
+                            class="bg-black/0 group-hover:bg-black/70 absolute inset-0 -z-1 transition-all duration-300 backdrop-blur-xs">
+                        </span>
+                        <span
+                            class="bg-grdnt-1 opacity-70 absolute inset-0 -z-1 group-hover:opacity-0 transition-all duration-300 backdrop-blur-xs">
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <!-- Mobile Menu Drawer (Fixed Resize Glitch & Edge Bleed) -->
+            <div x-cloak 
+            :class="open ? 'translate-x-0 opacity-100 pointer-events-auto' : 'translate-x-full opacity-0 pointer-events-none'"
+            class="fixed inset-0 w-full h-dvh z-99999 bg-white transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform pt-55 flex flex-col gap-75 xl:hidden">
+
+                <button aria-label="Zur Startseite"@click="open = !open" 
+                :class="open ? 'bg-white/70' : 'bg-black/70'"
+                class="size-65 rounded-full relative z-1 grid place-items-center backdrop-blur-xs shrink-0 transition-colors duration-500">
+                    <img src="assets/icons/home.svg" alt="">
+                </button>
+                <div class="grow text-h2-std uppercase font-tabular font-normal pl-20 flex items-center overflow-y-auto">
+                    <ul class="mobile-nav flex flex-col gap-45 max-h-full">
+                        <li>
+                            <a href="/" class="group flex items-center gap-18">
+                                <span class="nav-icon-wrap relative">
+                                <svg class="svg-static" width="11" height="31" viewBox="0 0 11 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.63312 1.35074e-06L11 13.7083L11 17.3333L10.9931 17.3333L4.29616 31L-2.86102e-06 31L7.45511 15.5417L0.210598 9.64109e-07L4.63312 1.35074e-06Z" fill="black" />
+                                </svg>
+                                <svg class="svg-hover" width="55" height="31" viewBox="0 0 55 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M43.8715 1.00024L54.3594 23.8267L54.3594 29.8629L54.348 29.8629L43.3164 52.62L36.2395 52.62L48.52 26.8795L36.5864 1.00024L43.8715 1.00024Z" fill="url(#paint0_linear_1_642)"/>
+                                            <path d="M17.3242 53.1197L17.665 52.4049L29.8447 26.8746L18.0098 1.20959L17.6826 0.499632L26.0693 0.499633L26.2031 0.791625L36.6904 23.6178L36.7363 23.7174L36.7363 30.3629L36.5381 30.3629L25.6436 52.8375L25.5068 53.1198L17.3242 53.1197Z" fill="url(#paint1_linear_1_642)" stroke=""/>
+                                        
+                                            <defs>
+                                            <linearGradient id="paint0_linear_1_642" x1="45.3258" y1="50.2069" x2="45.3258" y2="1.01733" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D792FF"/>
+                                            <stop offset="1" stop-color="#FFA442"/>
+                                            </linearGradient>
+                                            <linearGradient id="paint1_linear_1_642" x1="27.2028" y1="50.2067" x2="27.2028" y2="1.01708" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D792FF"/>
+                                            <stop offset="1" stop-color="#FFA442"/>
+                                            </linearGradient>
+                                            </defs>
+                                </svg>
+                                
+                                </span>
+                                <span>Agenda</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/" class="flex items-center gap-18">
+                                <span class="nav-icon-wrap relative">
+                                <svg class="svg-static" width="11" height="31" viewBox="0 0 11 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.63312 1.35074e-06L11 13.7083L11 17.3333L10.9931 17.3333L4.29616 31L-2.86102e-06 31L7.45511 15.5417L0.210598 9.64109e-07L4.63312 1.35074e-06Z" fill="black" />
+                                </svg>
+                                <svg class="svg-hover" width="55" height="31" viewBox="0 0 55 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M43.8715 1.00024L54.3594 23.8267L54.3594 29.8629L54.348 29.8629L43.3164 52.62L36.2395 52.62L48.52 26.8795L36.5864 1.00024L43.8715 1.00024Z" fill="url(#paint0_linear_1_642)"/>
+                                            <path d="M17.3242 53.1197L17.665 52.4049L29.8447 26.8746L18.0098 1.20959L17.6826 0.499632L26.0693 0.499633L26.2031 0.791625L36.6904 23.6178L36.7363 23.7174L36.7363 30.3629L36.5381 30.3629L25.6436 52.8375L25.5068 53.1198L17.3242 53.1197Z" fill="url(#paint1_linear_1_642)" stroke=""/>
+                                        
+                                            <defs>
+                                            <linearGradient id="paint0_linear_1_642" x1="45.3258" y1="50.2069" x2="45.3258" y2="1.01733" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D792FF"/>
+                                            <stop offset="1" stop-color="#FFA442"/>
+                                            </linearGradient>
+                                            <linearGradient id="paint1_linear_1_642" x1="27.2028" y1="50.2067" x2="27.2028" y2="1.01708" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D792FF"/>
+                                            <stop offset="1" stop-color="#FFA442"/>
+                                            </linearGradient>
+                                            </defs>
+                                </svg>
+                                
+                            </span>
+                                <span>SPEAKER</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/" class="flex items-center gap-18">
+                                <span class="nav-icon-wrap relative">
+                                <svg class="svg-static" width="11" height="31" viewBox="0 0 11 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.63312 1.35074e-06L11 13.7083L11 17.3333L10.9931 17.3333L4.29616 31L-2.86102e-06 31L7.45511 15.5417L0.210598 9.64109e-07L4.63312 1.35074e-06Z" fill="black" />
+                                </svg>
+                                <svg class="svg-hover" width="55" height="31" viewBox="0 0 55 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M43.8715 1.00024L54.3594 23.8267L54.3594 29.8629L54.348 29.8629L43.3164 52.62L36.2395 52.62L48.52 26.8795L36.5864 1.00024L43.8715 1.00024Z" fill="url(#paint0_linear_1_642)"/>
+                                            <path d="M17.3242 53.1197L17.665 52.4049L29.8447 26.8746L18.0098 1.20959L17.6826 0.499632L26.0693 0.499633L26.2031 0.791625L36.6904 23.6178L36.7363 23.7174L36.7363 30.3629L36.5381 30.3629L25.6436 52.8375L25.5068 53.1198L17.3242 53.1197Z" fill="url(#paint1_linear_1_642)" stroke=""/>
+                                        
+                                            <defs>
+                                            <linearGradient id="paint0_linear_1_642" x1="45.3258" y1="50.2069" x2="45.3258" y2="1.01733" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D792FF"/>
+                                            <stop offset="1" stop-color="#FFA442"/>
+                                            </linearGradient>
+                                            <linearGradient id="paint1_linear_1_642" x1="27.2028" y1="50.2067" x2="27.2028" y2="1.01708" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D792FF"/>
+                                            <stop offset="1" stop-color="#FFA442"/>
+                                            </linearGradient>
+                                            </defs>
+                                </svg>
+                                
+                            </span>
+                                <span>LOCATION</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/" class="flex items-center gap-18">
+                                <span class="nav-icon-wrap relative">
+                                <svg class="svg-static" width="11" height="31" viewBox="0 0 11 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.63312 1.35074e-06L11 13.7083L11 17.3333L10.9931 17.3333L4.29616 31L-2.86102e-06 31L7.45511 15.5417L0.210598 9.64109e-07L4.63312 1.35074e-06Z" fill="black" />
+                                </svg>
+                                <svg class="svg-hover" width="55" height="31" viewBox="0 0 55 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M43.8715 1.00024L54.3594 23.8267L54.3594 29.8629L54.348 29.8629L43.3164 52.62L36.2395 52.62L48.52 26.8795L36.5864 1.00024L43.8715 1.00024Z" fill="url(#paint0_linear_1_642)"/>
+                                            <path d="M17.3242 53.1197L17.665 52.4049L29.8447 26.8746L18.0098 1.20959L17.6826 0.499632L26.0693 0.499633L26.2031 0.791625L36.6904 23.6178L36.7363 23.7174L36.7363 30.3629L36.5381 30.3629L25.6436 52.8375L25.5068 53.1198L17.3242 53.1197Z" fill="url(#paint1_linear_1_642)" stroke=""/>
+                                        
+                                            <defs>
+                                            <linearGradient id="paint0_linear_1_642" x1="45.3258" y1="50.2069" x2="45.3258" y2="1.01733" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D792FF"/>
+                                            <stop offset="1" stop-color="#FFA442"/>
+                                            </linearGradient>
+                                            <linearGradient id="paint1_linear_1_642" x1="27.2028" y1="50.2067" x2="27.2028" y2="1.01708" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D792FF"/>
+                                            <stop offset="1" stop-color="#FFA442"/>
+                                            </linearGradient>
+                                            </defs>
+                                </svg>
+                                
+                            </span>
+                                <span>FAQ</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/" class="flex items-center gap-18">
+                                <span class="nav-icon-wrap relative">
+                                <svg class="svg-static" width="11" height="31" viewBox="0 0 11 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.63312 1.35074e-06L11 13.7083L11 17.3333L10.9931 17.3333L4.29616 31L-2.86102e-06 31L7.45511 15.5417L0.210598 9.64109e-07L4.63312 1.35074e-06Z" fill="black" />
+                                </svg>
+                                <svg class="svg-hover" width="55" height="31" viewBox="0 0 55 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M43.8715 1.00024L54.3594 23.8267L54.3594 29.8629L54.348 29.8629L43.3164 52.62L36.2395 52.62L48.52 26.8795L36.5864 1.00024L43.8715 1.00024Z" fill="url(#paint0_linear_1_642)"/>
+                                            <path d="M17.3242 53.1197L17.665 52.4049L29.8447 26.8746L18.0098 1.20959L17.6826 0.499632L26.0693 0.499633L26.2031 0.791625L36.6904 23.6178L36.7363 23.7174L36.7363 30.3629L36.5381 30.3629L25.6436 52.8375L25.5068 53.1198L17.3242 53.1197Z" fill="url(#paint1_linear_1_642)" stroke=""/>
+                                        
+                                            <defs>
+                                            <linearGradient id="paint0_linear_1_642" x1="45.3258" y1="50.2069" x2="45.3258" y2="1.01733" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D792FF"/>
+                                            <stop offset="1" stop-color="#FFA442"/>
+                                            </linearGradient>
+                                            <linearGradient id="paint1_linear_1_642" x1="27.2028" y1="50.2067" x2="27.2028" y2="1.01708" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D792FF"/>
+                                            <stop offset="1" stop-color="#FFA442"/>
+                                            </linearGradient>
+                                            </defs>
+                                </svg>
+                                
+                            </span>
+                                <span>TICKETS</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-30 relative bg-grdnt-1 text-white">
+                    <img src="assets/images/logo-lg.svg" alt="" width="245">
+                    <p class="mt-45 mb-10 text-xs font-tabular">
+                        Veranstaltet durch:
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <img src="assets/images/brand2.png" alt="">
+                        <img src="assets/images/brand1.png" alt="">
+                    </div>
+                </div>
+                <div class="absolute inset-0 -z-1 mix-blend-difference translate-x-1/2">
+                    <video poster="assets/images/hero-poster.webp" autoplay muted loop playsinline
+                        class="size-full object-cover brightness-125" preload="metadata">
+                        <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+
+    <main>
+
+        <section class="ctm_sec">
+            <div class="component">
+                <div class="relative min-h-230 xl:min-h-680 z-1 py-70 px-35">
+                    <a href="/" class="xl:hidden">
+                        <img src="assets/images/logo.svg" alt="">
+                    </a>
+                    <div class="absolute inset-0 -z-1 brightness-70">
+                        <video poster="assets/images/hero-poster.webp" autoplay muted loop playsinline
+                            class="size-full object-cover" preload="metadata">
+                            <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+                        </video>
+                        <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                            <div class="wm_img">
+                            <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute bg-grdnt-1 inset-0 xl:top-120 -z-1 mix-blend-difference"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ctm_sec my-sec-lg">
+            <div class="container">
+                <div class="component">
+                    <div class="flex flex-col gap-20 xl:gap-40 max-w-1000">
+                        <h1 class="text-h1 uppercase">
+                           Die Speaker: INNEN. 
+                        </h1>
+                        <div class="free_text">
+                            <p>
+                                Inspirierende Köpfe, vielfältige Perspektiven und fundierte Expertise – entdecken Sie die Speaker:innen von KONTUR 2027.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="ctm_sec">
+                <div class="component relative"> 
+                 <!-- Main Wrapper -->
+                    <div class="relative w-full flex items-center">
+                        <img src="./assets/images/slider-group-img-mobile.png" alt="" class="block md:hidden absolute -top-24 z-10 max-w-200">
+                        <!-- Static Navigation Arrows -->
+                        <button class="swiper-button-prev-custom absolute top-[62%] xsm:sm:top-[65%] md:top-1/2 left-13 md:left-20 z-20 text-white cursor-pointer hover:opacity-80 transition">
+                            <svg width="17" height="48" viewBox="0 0 17 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.83973 48L0 26.7742L0 21.1613H0.0106319L10.3605 0L17 0L5.47848 23.9355L16.6745 48H9.83973Z" fill="white"/>
+                            </svg>
+                        </button>
+                        <button class="swiper-button-next-custom absolute top-[62%] xsm:top-[65%] md:top-1/2 right-13 md:right-20 z-20 text-white cursor-pointer hover:opacity-80 transition">
+                            <svg width="17" height="48" viewBox="0 0 17 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.16027 -4.26764e-07L17 21.2258L17 26.8387L16.9894 26.8387L6.63952 48L-3.73599e-06 48L11.5215 24.0645L0.325471 -1.02428e-06L7.16027 -4.26764e-07Z" fill="white"/>
+                            </svg>
+                        </button>
+
+                        <!-- Swiper Container -->
+                        <div class="swiper speakerSwiper w-full h-full z-10 relative">    
+                            <div class="swiper-wrapper">
+                                <!-- Slide 1 -->
+                                <div class="swiper-slide h-auto!">
+                                    <div class="flex flex-col md:flex-row justify-between gap-8 h-full">
+                                        <div class="absolute inset-0 -z-1 brightness-70">
+                                            <video poster="assets/images/hero-poster.webp" autoplay muted loop playsinline
+                                                class="size-full object-cover" preload="metadata">
+                                                <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+                                            </video>
+                                            <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                <div class="wm_img">
+                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="absolute bg-grdnt-3 inset-0 -z-1 mix-blend-difference"></div>
+                                        
+                                        <!-- Dynamic Person Image -->
+                                        <div class="relative w-full h-full md:w-1/2 flex justify-center items-end">
+                                            <img src="assets/images/speaker-1.webp" alt="Dr. Friederike Maus" class="h-[90%] object-cover drop-shadow-xl">
+                                            <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                <div class="wm_img">
+                                                <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Dynamic Text desktop Content -->
+                                        <div class="w-full md:w-1/2 hidden md:flex flex-col items-start gap-45 text-black pt-74 pb-75 xl:pb-104 relative z-100 ">
+                                            <div class="relative -ml-58">
+                                                <img src="./assets/images/slider-group-img-desktop.png" alt="">
+                                            </div>
+
+                                            <div class="space-y-30  max-w-525">
+                                                <h2 class="text-h3-std font-tabular leading-relaxed">Dr. Friederike Maus</h2>
+                                                <div class="free_text max-w-376 text-body">
+                                                    <p>
+                                                        Geschäftsbereichleiterin Baumanagement, Bau- und Liegenschaftsbetrieb Nordrhein-Westfalen (BLB NRW)
+                                                    </p>
+                                                    <div class="space-y-12">
+                                                        <p><b>Fachrichtung:</b> Architektur</p>
+                                                        <p><b>Fachforum:</b> <u>Bestand weiterbauen (1A & 1B)</u></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <a href="#" class="btn btn-light border-0">
+                                                <span>Agenda entdecken</span>
+                                                <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <!-- Dynamic Text mobile Content -->
+                                         <div class="absolute md:relative bg-[#00000080] md:bg-transparent py-32 px-61 w-full h-auto bottom-0 left-0 md:hidden backdrop-blur-sm">
+                                                <div class="text-white flex flex-col gap-16 justify-center items-center text-center">
+                                                    <div class="space-y-10 flex flex-col text-[18px] font-tabular">
+                                                        <span class="text-pink">Dr. Friederike Maus</span>
+                                                        <span>#1 Bestand weiterbauen</span>
+                                                    </div>
+                                                          <a href="#" class="btn btn-light border-0">
+                                                            <span>Agenda entdecken</span>
+                                                                    <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor" />
+                                                                    </svg>
+                                                        </a>
+                                                </div>
+                                         </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="swiper-slide h-auto!">
+                                    <div class="flex flex-col md:flex-row justify-between gap-8 h-full">
+                                        <div class="absolute inset-0 -z-1 brightness-70">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="absolute bg-grdnt-3 inset-0 -z-1 mix-blend-difference"></div>
+                                        <div class="relative w-full md:w-1/2 flex justify-center items-end h-full">
+                                            <img src="assets/images/speaker-2.webp" alt="Katja Domschky" class="h-[90%] object-cover drop-shadow-xl">
+                                        </div>
+                                        <div class="w-full md:w-1/2 hidden md:flex flex-col items-start gap-45 text-black pt-74 pb-75 xl:pb-104">
+                                            <div class="relative -ml-58">
+                                                <img src="./assets/images/slider-group-img-desktop.png" alt="">
+                                            </div>
+
+                                            <div class="space-y-30 w-[90%] md:max-w-525">
+                                                <h2 class="text-h3-std font-tabular leading-relaxed">Dr. Friederike Maus</h2>
+                                                <div class="free_text max-w-376 text-body">
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eveniet eius assumenda alias numquam aliquam perspiciatis.
+                                                    </p>
+                                                    <div class="space-y-12">
+                                                        <p><b>Fachrichtung:</b> Architektur</p>
+                                                        <p><b>Fachforum:</b> <u>Bestand weiterbauen (1A & 1B)</u></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <a href="#" class="btn btn-light border-0">
+                                                <span>Agenda entdecken</span>
+                                                <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <!-- Dynamic Text mobile Content -->
+                                         <div class="absolute md:relative bg-[#00000080] md:bg-transparent py-32 px-61 w-full h-auto bottom-0 left-0 md:hidden backdrop-blur-sm">
+                                                <div class="text-white flex flex-col gap-16 justify-center items-center text-center">
+                                                    <div class="space-y-10 flex flex-col text-[18px] font-tabular">
+                                                        <span class="text-pink">Katja Domschky</span>
+                                                        <span>#1 Bestand weiterbauen</span>
+                                                    </div>
+                                                          <a href="#" class="btn btn-light border-0">
+                                                            <span>Agenda entdecken</span>
+                                                                    <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor" />
+                                                                    </svg>
+                                                        </a>
+                                                </div>
+                                         </div>
+                                    </div>
+                                </div>
+                                <!-- Slide 3 -->
+                                <div class="swiper-slide h-auto!">
+                                    <div class="flex flex-col md:flex-row justify-between gap-8 h-full">
+                                        <div class="absolute inset-0 -z-1 brightness-70">
+                                            <img src="assets/images/hero-poster.webp" alt="">
+                                        </div>
+                                        <div class="absolute bg-grdnt-3 inset-0 -z-1 mix-blend-difference"></div>
+                                        <div class="relative w-full md:w-1/2 flex justify-center items-end h-full">
+                                            <img src="assets/images/speaker-3.webp" alt="Katja Domschky" class="h-[90%] object-cover drop-shadow-xl">
+                                        </div>
+                                        <div class="w-full md:w-1/2 hidden md:flex flex-col items-start gap-45 text-black pt-74 pb-75 xl:pb-104">
+                                            <div class="relative -ml-58">
+                                                <img src="./assets/images/slider-group-img-desktop.png" alt="">
+                                            </div>
+
+                                            <div class="space-y-30 w-[90%] md:max-w-525">
+                                                <h2 class="text-h3-std font-tabular leading-relaxed">Dr. Friederike Maus</h2>
+                                                <div class="free_text max-w-376 text-body">
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eveniet eius assumenda alias numquam aliquam perspiciatis.
+                                                    </p>
+                                                    <div class="space-y-12">
+                                                        <p><b>Fachrichtung:</b> Architektur</p>
+                                                        <p><b>Fachforum:</b> <u>Bestand weiterbauen (1A & 1B)</u></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <a href="#" class="btn btn-light border-0">
+                                                <span>Agenda entdecken</span>
+                                                <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <!-- Dynamic Text mobile Content -->
+                                         <div class="absolute md:relative bg-[#00000080] md:bg-transparent py-32 px-61 w-full h-auto bottom-0 left-0 md:hidden backdrop-blur-sm">
+                                                <div class="text-white flex flex-col gap-16 justify-center items-center text-center">
+                                                    <div class="space-y-10 flex flex-col text-[18px] font-tabular">
+                                                        <span class="text-pink">Katja Domschky</span>
+                                                        <span>#1 Bestand weiterbauen</span>
+                                                    </div>
+                                                          <a href="#" class="btn btn-light border-0">
+                                                            <span>Agenda entdecken</span>
+                                                                    <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor" />
+                                                                    </svg>
+                                                        </a>
+                                                </div>
+                                         </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+         
+        <section class="ctm_sec my-sec-lg">
+               <div class="container">
+                     <div class="component">
+                        <div class="flex flex-col gap-42 md:gap-gutter">
+                            <div>
+                                <h2 class="text-h2-std">Alle Speaker:innen im Überblick</h2>
+                            </div>
+                            <!-- tab -->
+                            <div x-data="{ activeFilter: 'all', dropdownOpen: false, 
+                                    selectedCategoryName: 'Nach Fachforen sortieren' }">
+
+                                    <!-- FILTER BUTTONS BAR -->
+                                    <div class="flex items-center gap-16 sm:gap-24 lg:gap-43 text-sm sm:text-body font-tabular font-medium mb-10 relative z-30">
+                                        
+                                        <!-- BUTTON 1: ALL -->
+                                        <button type="button"
+                                            @click="activeFilter = 'all'; selectedCategoryName = 'Nach Fachforen sortieren'"
+                                            :class="activeFilter === 'all' ? 'text-orange' : 'text-zinc-900 hover:text-orange'"
+                                            class="transition-colors">
+                                            Alle Speaker:innen
+                                        </button>
+
+                                        <!-- BUTTON 2: CATEGORY DROPDOWN -->
+                                        <div class="relative" @click.away="dropdownOpen = false">
+                                            <button 
+                                                type="button"
+                                                @click="dropdownOpen = !dropdownOpen"
+                                                :class="activeFilter !== 'all' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
+                                                class="flex items-center gap-10 transition-colors pl-0 sm:pl-30 pr-0 sm:pr-30 lg:pr-72">
+                                                <span x-text="selectedCategoryName"></span>
+                                                 
+                                                <svg class="w-16 h-18 stroke-current transition-transform duration-200" :class="{ 'rotate-180': dropdownOpen }" width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10 1.26358L5.57796 3L4.4086 3L4.4086 2.99812L2.18025e-08 1.17168L3.57747e-08 -7.15256e-07L4.98656 2.03321L10 0.0574352L10 1.26358Z" fill="black"/>
+                                                </svg>
+
+                                            </button>
+
+                                            <!-- HARDCODED DROPDOWN LIST -->
+                                            <div  x-show="dropdownOpen"
+                                                x-transition
+                                                class="absolute left-0 mt-8 w-full bg-white shadow-2xl z-50 text-body font-tabular flex flex-col gap-12 py-12 px-16"
+                                                style="display: none;">
+                                                
+                                                <button type="button"
+                                                    @click="activeFilter = 'cat1'; selectedCategoryName = '#1 Bestand weiterbauen'; dropdownOpen = false"
+                                                    :class="activeFilter === 'cat1' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
+                                                    class="w-full text-left py-8 transition-colors">
+                                                    #1 Bestand weiterbauen
+                                                </button>
+
+                                                <button  type="button" @click="activeFilter = 'cat2'; selectedCategoryName = '#2 Wohnen neu denken'; dropdownOpen = false"
+                                                    :class="activeFilter === 'cat2' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
+                                                    class="w-full text-left py-4 transition-colors">
+                                                    #2 Wohnen neu denken
+                                                </button>
+
+                                                <button  type="button"  @click="activeFilter = 'cat3'; selectedCategoryName = '#3 Freiraumwende erreichen'; dropdownOpen = false"
+                                                    :class="activeFilter === 'cat3' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
+                                                    class="w-full text-left py-4 transition-colors">
+                                                    #3 Freiraumwende erreichen
+                                                </button>
+
+                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#4 Öffentlichen Raum stärken'; dropdownOpen = false"
+                                                    :class="activeFilter === 'cat4' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
+                                                    class="w-full text-left py-4 transition-colors">
+                                                    #4 Öffentlichen Raum stärken
+                                                </button>
+                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#5 Teilhabe ermöglichen'; dropdownOpen = false"
+                                                    :class="activeFilter === 'cat5' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
+                                                    class="w-full text-left py-4 transition-colors">
+                                                    #5 Teilhabe ermöglichen
+                                                </button>
+                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#6 Resilienz vorantreiben'; dropdownOpen = false"
+                                                    :class="activeFilter === 'cat6' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
+                                                    class="w-full text-left py-4 transition-colors">
+                                                   #6 Resilienz vorantreiben
+                                                </button>
+                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#7 Zirkularität umsetzen'; dropdownOpen = false"
+                                                    :class="activeFilter === 'cat7' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
+                                                    class="w-full text-left py-4 transition-colors">
+                                                    #7 Zirkularität umsetzen
+                                                </button>
+                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#8 Digital planen'; dropdownOpen = false"
+                                                    :class="activeFilter === 'cat8' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
+                                                    class="w-full text-left py-4 transition-colors">
+                                                   #8 Digital planen
+                                                </button>
+                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#9 Einfach bauen'; dropdownOpen = false"
+                                                    :class="activeFilter === 'cat9' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
+                                                    class="w-full text-left py-4 transition-colors">
+                                                  #9 Einfach bauen
+                                                </button>
+                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#10 Qualität sichern'; dropdownOpen = false"
+                                                    :class="activeFilter === 'cat10' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
+                                                    class="w-full text-left py-4 transition-colors">
+                                                    #10 Qualität sichern
+                                                </button>
+                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#11 Transformation finanzieren'; dropdownOpen = false"
+                                                    :class="activeFilter === 'cat11' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
+                                                    class="w-full text-left py-4 transition-colors">
+                                                   #11 Transformation finanzieren
+                                                </button>
+
+                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#12 Beruf weiterentwickeln'; dropdownOpen = false"
+                                                    :class="activeFilter === 'cat12' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
+                                                    class="w-full text-left py-4 transition-colors">
+                                                  #12 Beruf weiterentwickeln
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- HARDCODED CARDS GRID -->
+                                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20 mt-35">
+
+                                        <!-- CARD 1 (Category 1) -->
+                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat1'"
+                                            x-transition
+                                            class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
+
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover" />
+                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                            </div>
+
+                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
+                                                <img src="assets/images/speaker-1.webp" alt="Dr. Friederike Maus" class="h-full w-full object-cover object-top">
+                                            </div>
+
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Dr. Friederike <br> Maus</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 2 (Category 2) -->
+                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat2'"
+                                            x-transition
+                                            class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+                                            
+
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/bg-speaker-3.webp" alt="" class="w-full h-full object-cover" />
+                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                            </div>
+
+                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
+                                                <img src="assets/images/speaker-3.webp" alt="Heike Blohm-Schröder" class="h-full w-full object-cover object-top">
+                                            </div>
+
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Heike <br>Blohm-Schröder</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 3 (Category 3) -->
+                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat3'"
+                                            x-transition
+                                            class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
+                                            
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/bg-speaker-2.png" alt="" class="w-full h-full object-cover" />
+                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                            </div>
+
+                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
+                                                <img src="assets/images/speaker-2.webp" alt="Katja Domschky" class="h-full w-full object-cover object-top">
+                                            </div>
+
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Katja <br> Domschky</h3>
+                                            </div>
+                                        </div>
+                                        <!-- CARD 4 (Category 4) -->
+                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat4'"
+                                                x-transition
+                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
+                                            
+                                                <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+                                            
+
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover" />
+                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                            </div>
+
+                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
+                                                <img src="assets/images/speaker-1.webp" alt="Dr. Markus Gabriel" class="h-full w-full object-cover object-top">
+                                            </div>
+
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Dr. Markus <br> Gabriel</h3>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- CARD 5 (Category 5) -->
+                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat5'"
+                                                x-transition
+                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
+                                            
+                                                <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+                                            
+
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/bg-speaker-3.webp" alt="" class="w-full h-full object-cover" />
+                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                            </div>
+
+                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
+                                                <img src="assets/images/speaker-3.webp" alt="Prof. Dr. Linda Hildebrand" class="h-full w-full object-cover object-top">
+                                            </div>
+
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Prof. Dr. Linda <br> Hildebrand</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 6 (Category 6) -->
+                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat6'"
+                                                x-transition
+                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
+                                            
+                                                <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+                                            
+
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/bg-speaker-2.png" alt="" class="w-full h-full object-cover" />
+                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                            </div>
+
+                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
+                                                <img src="assets/images/speaker-2.webp" alt="Jette Cathrin Hopp" class="h-full w-full object-cover object-top">
+                                            </div>
+
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Jette Cathrin<br> Hopp</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 7 (Category 7) -->
+                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat7'"
+                                                x-transition
+                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
+                                            
+                                                <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+                                            
+
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover" />
+                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                            </div>
+
+                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
+                                                <img src="assets/images/speaker-1.webp" alt="Van Bo Le-Mentzel" class="h-full w-full object-cover object-top">
+                                            </div>
+
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Van Bo<br> Le-Mentzel</h3>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- CARD 8 (Category 8) -->
+                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat8'"
+                                                x-transition
+                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
+                                            
+                                                <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+                                            
+
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/bg-speaker-3.webp" alt="" class="w-full h-full object-cover" />
+                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                            </div>
+
+                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
+                                                <img src="assets/images/speaker-3.webp" alt="Stefan Postert" class="h-full w-full object-cover object-top">
+                                            </div>
+
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Stefan<br> Postert</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 9 (Category 9) -->
+                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat9'"
+                                                x-transition
+                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
+                                            
+                                                <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+                                            
+
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/bg-speaker-2.png" alt="Prof. Dr. Tanja Remke" class="w-full h-full object-cover" />
+                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                            </div>
+
+                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
+                                                <img src="assets/images/speaker-2.webp" alt="Van Bo Le-Mentzel" class="h-full w-full object-cover object-top">
+                                            </div>
+
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Prof. Dr. Tanja<br> Remke</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 10 (Category 10) -->
+                                        <div x-show="activeFilter === 'all' || activeFilter === 'cat10'"
+                                                x-transition
+                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
+                                            
+                                                <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+                                            
+
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/bg-speaker-3.webp" alt="Franz Reschke" class="w-full h-full object-cover" />
+                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
+                                            </div>
+
+                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
+                                                <img src="assets/images/speaker-3.webp" alt="Van Bo Le-Mentzel" class="h-full w-full object-cover object-top">
+                                            </div>
+
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Franz<br> Reschke</h3>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                            </div>
+
+                            <!-- Add more button -->
+                             <a href="https://p711910.webspaceconfig.de/agenda" class="btn btn-light mt-15 mx-auto">
+                                        <span>Weitere laden</span>
+                                        <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor"></path>
+                                        </svg>               
+                            </a>
+                        </div>
+                    </div>
+               </div>
+        </section>
+       <!-- modal popup -->
+        <div id="modal-popup" class="hidden w-full h-screen fixed top-0 z-999999 xl:z-10  bg-black md:bg-[#000000CC] flex-col lg:flex-row overflow-y-auto">
+            <div class="relative lg:w-1/2 h-full">
+                <a href="#" id="close-modal-btn" class="lg:hidden w-65 h-65 bg-[#000000B2] rounded-full absolute top-53 right-25 flex justify-center items-center">
+                            <svg class="w-32 xl:w-43 h-32 xl:h-43" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M31.7459 10.5312L10.6836 31.8943" stroke="#ffffff" stroke-width="1.55436" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10.5311 10.6819L31.8941 31.7442" stroke="#ffffff" stroke-width="1.55436" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+
+                        </a>
+                        <div class="absolute top-0 left-0 w-full h-full -z-1">
+                            <img src="./assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full h-full flex justify-center items-end">
+                            <img src="./assets/images/speaker-1.webp" alt="" class="w-auto h-[80%] object-cover">
+                        </div>
+                </div>
+                <div class="relative backdrop-blur-sm lg:w-1/2 md:h-full flex justify-start items-start md:items-center pt-46 pb-142 md:py-gutter px-42 lg:pl-sec-sm">
+                            <a href="#" id="close-modal-btn" class="hidden lg:flex w-50 xl:w-65 h-50 xl:h-65 bg-white rounded-full absolute top-80 xl:top-180 right-20 justify-center items-center">
+                                <svg class="w-32 xl:w-43 h-32 xl:h-43" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M31.7459 10.5312L10.6836 31.8943" stroke="black" stroke-width="1.55436" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10.5311 10.6819L31.8941 31.7442" stroke="black" stroke-width="1.55436" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+
+                            </a>
+                        <div class="flex flex-col gap-30 text-white text-body">
+                            <h3 class="text-pink font-tabular text-h3-std">Heike Blohm-Schröder</h3>
+                            <div class="free_text max-w-378 mb-15">
+                                <p>Geschäftsbereichleiterin Baumanagement, <br>
+                                    Bau- und Liegenschaftsbetrieb Nordrhein-Westfalen (BLB NRW)</p>
+
+                                <div class="space-y-8 flex flex-col">
+                                    <span><b>Fachrichtung:</b> Architektur</span>
+                                    <span><b>Fachforum:</b> Bestand weiterbauen (1A & 1B)</span>
+                                </div>
+                                    
+                            </div>
+                            <a href="#" class="hidden md:flex btn btn-light border-0">
+                                <span>Agenda entdecken</span>
+                                    <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor"></path>
+                                    </svg>
+                            </a>
+                             <a href="#" class="btn-pink p-30 fixed inset-0 top-auto w-full text-h2-std md:hidden z-9999">
+                                <span>Agenda entdecken</span>
+                                    <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor"></path>
+                                    </svg>
+                            </a>
+                        </div>
+                </div>
+        </div>
+
+        <!--  -->
+        <section class="ctm_sec my-sec-lg">
+            <div class="row cols_1">
+                <div class="col">
+                    <div class="component">
+                        <div class="space-y-sec-sm xl:space-y-sec-lg">
+
+                            <div class="flex md:gap-30 xl:gap-150 items-center sm:items-stretch">
+                                <div class="md:w-1/2 flex items-start">
+                                    
+                                     <img src="https://p711910.webspaceconfig.de/media/pages/media-hub/faq/3a5339c593-1786524360/barcode.svg" alt="" class="w-full not-md:hidden">
+                                </div>
+                                <div class="md:w-1/2 flex flex-col gap-30 3xl:pr-[calc((100%-1500px)/2)] px-34 md:px-gutter">
+                                    <h3 class="text-h2-highlight font-tabular font-medium uppercase">
+                                        12 Fachforen & starke Impulse.
+                                    </h3>
+                                    <div class="free_text max-w-550">
+                                         <p>Von inspirierenden Keynotes bis zu interdisziplinären Fachforen: Die Agenda von KONTUR 2027 bietet ein vielseitiges Programm und schafft Raum für Wissen, Austausch und neue Ideen.</p>
+                                    </div>
+                                    <a href="https://p711910.webspaceconfig.de/agenda" class="btn btn-light mt-15">
+                                                                                    <span>Speaker entdecken</span>
+                                                                                    <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor"></path>
+                                                                                    </svg> 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="relative z-1 py-sec-sm text-white">
+        <div class="container">
+            <div class="flex not-md:flex-col justify-between gap-45">
+                <div class="md:w-1/2 lg:w-1/3 flex flex-col gap-60">
+                    <a href="/">
+                        <img src="assets/images/logo-lg.svg" alt="">
+                    </a>
+                    <p>
+                        Der Kongress für Architektur und Stadtgestaltung in Nordrhein-Westfalen - mit Fokus auf
+                        nachhaltiges Bauen, Stadtentwicklung, KI und die Räume von morgen.
+                    </p>
+                </div>
+                <div
+                    class="md:w-1/2 lg:w-1/3 uppercase font-tabular flex gap-60 justify-between items-end font-semibold">
+                    <nav class="flex flex-col gap-12 xl:gap-60">
+                        <ul class="flex flex-col gap-12 xl:gap-24">
+                            <li>
+                                <a href="/">
+                                    Agenda
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/">
+                                    SPEAKER
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/">
+                                    Location
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/">
+                                    FAQ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/">
+                                    TICKETS
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="not-md:flex-col flex gap-12 xl:gap-24">
+                            <li>
+                                <a href="/">
+                                    Impressum
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/">
+                                    Datenschutz
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="flex flex-col gap-20 xl:gap-24">
+                        <a href="#" target="_blank">
+                            <img src="assets/icons/instagram.svg" alt="" class="not-md:w-20">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="assets/icons/facebook.svg" alt="" class="not-md:w-20">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-0 -z-1 brightness-70">
+            <video poster="assets/images/hero-poster.webp" autoplay muted loop playsinline
+                class="size-full object-cover scale-x-[-1]" preload="metadata">
+                <!-- <source src="assets/videos/hero-bg.mp4" type="video/mp4"> -->
+                <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+            </video>
+                <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                    <div class="wm_img">
+                        <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                    </div>
+                </div>
+            </div>
+        <div class="absolute bg-grdnt-1 inset-0 -z-1 mix-blend-difference"></div>
+    </footer>
+
+    <a href="/" class="btn-pink p-30 fixed inset-0 top-auto w-full text-h2-std md:hidden z-9999">
+        JETZT TICKETS SICHERN
+    </a>
+
+
+    <script src="assets/js/lucide.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+<script>
+ const speakerSwiper = new Swiper('.speakerSwiper', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  speed: 800,
+  parallax: true, // Requires adding data-swiper-parallax attributes to HTML elements
+  navigation: {
+    nextEl: '.swiper-button-next-custom',
+    prevEl: '.swiper-button-prev-custom',
+  },
+});
+</script>
+</body>
+
+</html>

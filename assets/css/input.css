@@ -1,0 +1,461 @@
+@font-face {
+    font-family: "Inter Tight";
+    src: url("../fonts/inter-tight-variable.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter Tight";
+    src: url("../fonts/inter-tight-variable-italic.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tabular";
+    src: url("../fonts/tabular-variable.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tabular";
+    src: url("../fonts/tabular-variable-italic.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+@import "tailwindcss";
+
+@theme {
+    --spacing: 1px;
+    --spacing-gutter: clamp(1rem, 0.3959rem + 2.2742vw, 3.125rem); /* 16px to 50px */
+    --spacing-sec-sm: clamp(5rem, 4.2893rem + 2.6756vw, 7.5rem);   /* 80px to 120px */
+    --spacing-sec-lg: clamp(7.5rem, 6.4339rem + 4.0134vw, 11.25rem); /* 120px to 180px */
+
+    --breakpoint-*: initial;
+    --container-*: initial;
+
+    --breakpoint-xsm: 450px;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-2xl: 1400px;
+    --breakpoint-3xl: 1500px;
+    --breakpoint-4xl: 1600px;
+
+    --color-pink: #D792FF;
+    --color-orange: #FF8400;
+
+    --font-tabular: "Tabular";
+    --font-inter: "Inter Tight";
+
+  /* Body Text */
+--text-body: clamp(0.9375rem, 0.8842rem + 0.2107vw, 1.125rem); /* min: 15px | max: 18px */
+--text-body--line-height: clamp(1.5rem, 1.4112rem + 0.3344vw, 1.8125rem); /* min: 24px | max: 29px */
+
+/* H1 */
+--text-h1: clamp(2.125rem, 1.663rem + 1.7391vw, 3.75rem); /* min: 34px | max: 60px */
+--text-h1--line-height: clamp(3rem, 2.467rem + 2.0067vw, 4.875rem); /* min: 48px | max: 78px */
+--text-h1--font-weight: 500;
+
+/* H2 Standard */
+--text-h2-std: clamp(1.625rem, 1.5184rem + 0.4013vw, 2rem); /* min: 26px | max: 32px */
+--text-h2-std--line-height: clamp(2.25rem, 2.0901rem + 0.602vw, 2.8125rem); /* min: 36px | max: 45px */
+--text-h2-std--font-weight: 500;
+
+/* H2 Highlight */
+--text-h2-highlight: clamp(1.625rem, 1.5184rem + 0.4013vw, 2rem); /* min: 26px | max: 32px */
+--text-h2-highlight--line-height: clamp(2.25rem, 2.0901rem + 0.602vw, 2.8125rem); /* min: 36px | max: 45px */
+
+/* H3 Standard */
+--text-h3-std: clamp(1.375rem, 1.2684rem + 0.4013vw, 1.75rem); /* min: 22px | max: 28px */
+--text-h3-std--line-height: clamp(2.0625rem, 1.9381rem + 0.4682vw, 2.5rem); /* min: 33px | max: 40px */
+--text-h3-std--font-weight: 500;
+
+/* H4 Standard */
+--text-h4-std: clamp(1.125rem, 1.0184rem + 0.4013vw, 1.5rem); /* min: 18px | max: 24px */
+--text-h4-std--line-height: clamp(1.8125rem, 1.6881rem + 0.4682vw, 2.25rem); /* min: 29px | max: 36px */
+--text-h4-std--font-weight: 500;
+
+/* H4 Highlight */
+--text-h4-highlight: clamp(1.125rem, 1.0184rem + 0.4013vw, 1.5rem); /* min: 18px | max: 24px */
+--text-h4-highlight--line-height: clamp(1.8125rem, 1.6881rem + 0.4682vw, 2.25rem); /* min: 29px | max: 36px */
+
+}
+body { -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+
+     /* h1, h2, h3, h4, h5, h6 {
+        -webkit-hyphens: manual;
+        hyphens: manual;
+    } */
+@layer base {
+    html {
+        @apply  mx-auto scroll-smooth;
+    }
+  
+    * {
+        @apply scrollbar-thin scrollbar-thumb-orange scrollbar-track-black;
+    }
+
+    body {
+        @apply font-inter text-body;
+    }
+    
+    :is(h1, h2, h3, h4, h5, h6) {
+        @apply font-tabular;
+        word-spacing: -30%;
+    }
+
+    button {
+        @apply cursor-pointer
+    }
+
+    .container {
+        @apply mx-auto px-gutter
+    }
+
+    .text-h3-highlight :is(b, strong, span),
+    .text-h4-highlight :is(b, strong, span) {
+        @apply font-semibold;
+    }
+
+    .btn-pink::after {
+        @apply content-[''] absolute inset-0 -z-1 bg-linear-0 from-orange to-pink transition-slow
+    }
+
+    .btn-pink:hover::after {
+        @apply opacity-0
+    }
+
+    .bg-black a {
+        @apply text-white hover:text-orange transition-slow
+    }
+
+    .bg-grdnt-1 a {
+        @apply text-white hover:text-black transition-slow
+    }
+
+    .announcement span {
+        @apply flex items-center
+    }
+
+    .announcement span::after {
+        @apply content-[''] block size-11 bg-[url(../icons/left-arrows.svg)] bg-contain bg-center ml-8
+    }
+
+    .main_navigation a {
+        @apply transition-slow hover:text-pink;
+    }
+
+    .main_navigation a.active {
+        @apply text-orange;
+    }
+    footer nav ul li a{
+        @apply relative
+    }
+    footer nav ul li a:before{
+        @apply content-[''] w-0 h-1 bg-white absolute -bottom-5 left-0 opacity-0 invisible transition-slow duration-300
+    }
+    footer nav ul li a:hover:before{
+        @apply w-full opacity-100 visible
+    }
+    .ctm_sec {
+        @apply relative z-1;
+    }
+
+    .sec_bg,
+    .overlay {
+        @apply absolute inset-0 -z-1;
+    }
+
+    .sec_bg :is(img, video, div) {
+        @apply size-full object-cover
+    }
+
+    .row {
+        @apply grid gap-25 xl:gap-50
+    }
+
+    .cols_1_1 {
+        @apply lg:grid-cols-2
+    }
+
+    .cols_1_2,
+    .cols_2_1 {
+        @apply lg:grid-cols-3
+    }
+
+    .cols_1_2 .col:last-child,
+    .cols_2_1 .col:first-child {
+        @apply lg:col-span-2
+    }
+
+    .free_text, .col {
+        @apply flex flex-col gap-30 2xl:gap-40
+    }
+
+    .col .btn {
+        @apply mt-15 2xl:mt-20
+    }
+
+    .heading_1 {
+        @apply text-h1
+    }
+
+    .heading_2 {
+        @apply text-h2-std
+    }
+
+    .heading_3 {
+        @apply text-h3-std
+    }
+
+    .heading_4 {
+        @apply text-h4-std
+    }
+
+    .ctm_list {
+        @apply list-disc pl-20
+    }
+
+    .ctm_blockquote {
+        @apply p-20 border-l-2 bg-black/5 flex flex-col gap-10
+    }
+
+    .ctm_code {
+        @apply bg-black/90 text-white p-16
+    }
+
+    .free_text :is(strong, b) ,
+    .col :is(strong, b) {
+        @apply font-semibold
+    }
+
+    .free_text :is(u, a):not(.btn) ,
+    .col :is(u, a):not(.btn) {
+        @apply underline underline-offset-2
+    }
+
+    .free_text ul{
+        @apply list-disc pl-20
+    }
+}
+
+.marquee_item {
+    animation-name: marquee;
+    animation-duration: 25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.marquee.left .marquee_item {
+    animation-direction: normal;
+}
+
+.marquee.right .marquee_item {
+    animation-direction: reverse;
+}
+
+.announcement .marquee.right span::after {
+    transform: scaleX(-1);
+}
+
+form .message {
+    @apply hidden
+}
+
+form .error input {
+    @apply border-orange
+}
+
+form .error .message {
+    @apply block text-xs bg-orange py-3 px-6
+}
+
+form:has(.error) .btn {
+    @apply border-orange
+}
+
+form:has(.error) .btn svg {
+    @apply text-orange
+}
+
+form.success .btn {
+    @apply border-[#52C64B]
+}
+
+form.success .btn svg {
+    @apply text-[#52C64B]
+}
+
+.arrow {
+    --dur: 1.8s;
+    --gap: 0.2s;
+    --dim: 0.15;
+}
+
+.arrow .chev {
+    opacity: var(--dim);
+    animation: chev-cascade var(--dur) ease-in-out infinite;
+}
+
+.arrow .chev-2 {
+    animation-delay: var(--gap);
+}
+
+.arrow .chev-3 {
+    animation-delay: calc(var(--gap) * 2);
+}
+
+/* Container anchor point */
+.nav-icon-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 31px;
+}
+
+/* Base static SVG: smooth fade-in when un-hovered */
+.svg-static {
+  transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hide static SVG INSTANTLY on hover/focus to eliminate overlap */
+ul li a:hover .svg-static,
+ul li a:focus-within .svg-static,
+ul li a[aria-current="page"] .svg-static {
+  opacity: 0;
+  visibility: hidden;
+  transition: none; /* Disappears immediately on tap/hover */
+}
+
+/* Base hover SVG: hidden by default */
+.svg-hover {
+  position: absolute;
+  top: 50%;
+  left: -12px;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Smoothly fade in hover SVG */
+ul li a:hover .svg-hover,
+ul li a:focus-within .svg-hover,
+ul li a[aria-current="page"] .svg-hover {
+  opacity: 1;
+  visibility: visible;
+}
+@keyframes chev-cascade {
+    0% {
+        opacity: var(--dim);
+    }
+
+    18% {
+        opacity: 1;
+    }
+
+    42% {
+        opacity: var(--dim);
+    }
+
+    100% {
+        opacity: var(--dim);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .arrow .chev {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%)
+    }
+
+    100% {
+        transform: translateX(-100%)
+    }
+}
+
+@utility transition-slow {
+    @apply transition-all ease-linear
+}
+
+@utility btn {
+    @apply py-10 sm:py-15 px-20 sm:px-30 flex items-center gap-10 border rounded-full w-fit font-tabular font-medium transition-slow justify-center;
+    word-spacing: -30%;
+}
+
+@utility btn-light {
+    @apply bg-white text-black hover:bg-black hover:text-white transition-slow;
+}
+
+@utility btn-dark {
+    @apply bg-black text-white hover:bg-white hover:text-black transition-slow;
+}
+
+@utility btn-pink {
+    @apply flex items-center gap-10 uppercase w-fit font-tabular font-medium transition-slow justify-center bg-black text-white text-h4-std relative z-1;
+}
+
+@utility bg-grdnt-1 {
+    @apply bg-linear-0 from-orange to-pink
+}
+
+@utility bg-grdnt-2 {
+    mask-image: linear-gradient(0deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
+}
+@utility bg-grdnt-3{
+    background: linear-gradient(180.28deg, #D792FF 0.23%, #FF8400 99.74%);
+}
+@utility text-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+@utility mask-1 {
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 49%, rgba(0, 0, 0, 0) 100%);
+}
+
+@utility mask-2 {
+    mask-image: linear-gradient(0deg, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+@utility text-shadow-1 {
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+
+/* common css */
+@media (max-width:440px){
+.swiper-button-prev-custom, .swiper-button-next-custom{
+    top:59%;
+}
+}
+@media (max-width:380px){
+.swiper-button-prev-custom, .swiper-button-next-custom{
+    top:56%;
+}
+}
