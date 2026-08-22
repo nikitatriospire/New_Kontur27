@@ -194,15 +194,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const topOffset = startTop - tableTop;
             const totalHeight = endBottom - startTop;
 
-            // Apply calculated pixel values
             mediaBox.style.marginTop = `${topOffset}px`;
             mediaBox.style.height = `${totalHeight}px`;
         }
     }
 
-    // Run on load, images load, and window resize
     window.addEventListener('load', alignMediaBox);
     window.addEventListener('resize', alignMediaBox);
+
+    
 // ---------------------------------------------------------
 // FOR TABLE HIDE ROW
 // ---------------------------------------------------------
@@ -257,3 +257,69 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 })();
+
+
+// new accordion slider
+document.addEventListener('alpine:init', () => {
+    Alpine.data('timelineSlider', () => ({
+        progress: 15,
+
+        init() {
+            this.updateProgress();
+        },
+
+        updateProgress() {
+            const viewport = this.$refs.viewport;
+            if (!viewport) return;
+
+            const scrollTop = viewport.scrollTop;
+            const scrollHeight = viewport.scrollHeight - viewport.clientHeight;
+
+            if (scrollHeight <= 0) {
+                this.progress = 100;
+                return;
+            }
+
+            const rawPercent = (scrollTop / scrollHeight) * 100;
+            this.progress = Math.max(15, rawPercent);
+        }
+    }));
+});
+
+// ---------------------------------------------------------
+// CARD POPUP
+// ---------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('modal-popup1');
+    const closeBtns = document.querySelectorAll('#close-modal-btn1');
+    const cards = document.querySelectorAll('.forum-card');
+
+    function openModal() {
+        modal.style.display = 'flex';
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(e) {
+        if (e) e.preventDefault();
+        modal.style.display = 'none';
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    // Attach listeners to all speaker cards
+    cards.forEach(card => card.addEventListener('click', openModal));
+    
+    // Attach listeners to both mobile and desktop close buttons
+    closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+
+    // Close on ESC key press
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    // Close on background backdrop click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+});

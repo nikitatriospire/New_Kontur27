@@ -100,7 +100,17 @@
 body { -webkit-hyphens: auto;
             hyphens: auto;
         }
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
 
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
+}
      /* h1, h2, h3, h4, h5, h6 {
         -webkit-hyphens: manual;
         hyphens: manual;

@@ -321,6 +321,8 @@
             </div>
         </section>
 
+
+        <!-- table section-->
         <section class="ctm_sec my-sec-sm">
             <div class="row cols_1">
                <div class="col">
@@ -476,10 +478,17 @@
                         </div>
                         <div class="">
                             <div id="mediaBox" class="w-full relative overflow-hidden hidden lg:block transition-all duration-100">
-                                <video poster="assets/images/hero-poster.webp" autoplay muted loop playsinline class="size-full object-cover">
-                                    <source src="assets/videos/hero-bg.mp4" type="video/mp4">
-                                </video>
-                                <div class="absolute bg-grdnt-1 inset-0 mix-blend-difference"></div>
+                                <div class="absolute inset-0 -z-1 brightness-70">
+                                        <video poster="assets/images/hero-poster.webp" autoplay muted loop playsinline class="size-full object-cover">
+                                        <source src="assets/videos/hero-bg.mp4" type="video/mp4">
+                                        </video>
+                                        <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                </div>
+                                 <div class="absolute bg-grdnt-1 inset-0 mix-blend-difference"></div>
                             </div>
                         </div>
                     </div>
@@ -492,8 +501,8 @@
                 <div class="row cols_1">
                     <div class="col">
                         <div class="component">
-                            
-                            <div class="free_text">
+                            <div>
+                                <div class="free_text">
                                 <h2 class="heading_2">KONTUR – So funktioniert’s.</h2>
                                 <p><b>Ganz einfach</b> – Event-Ticket sichern und für Fachforen anmelden.</p>
                                 <p>Mit Ihrem Eventticket erhalten Sie Zugang zu den Fachforen. Wählen Sie jeweils ein Fachforum am Vormittag und eines am Nachmittag aus zwölf parallel stattfindenden Angeboten zu aktuellen und zukünftigen Themen der Architektur und Stadtplanung.</p>
@@ -505,589 +514,493 @@
                                             <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor"></path>
                                         </svg>
                                     </a>
+                                </div>
+
+                                <div>
+                                    <!-- HARDCODED CARDS GRID -->
+                                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20 mt-35">
+
+                                        <!-- CARD 1 (Category 1) -->
+                                        <div class="forum-card group relative aspect-[0.8094] overflow-hidden cursor-pointer transition-slow">
+                                            <!-- mobile plus icon -->
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <!-- desktop background image -->
+                                            <div class="absolute inset-0 w-full h-full -z-1">
+                                                <img src="assets/images/number-1.png" alt="number-1" class="w-full h-full object-cover brightness-30" />
+                                                <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div>
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- hover Gradient plus icon -->
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <!-- card Text -->
+                                            <div class=" px-20 py-20 absolute bottom-0 left-0 flex justify-start items-start text-start w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">#1  <br>Dr. Friederike <br> Maus</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 2 (Category 2) -->
+                                        <div class="forum-card group relative aspect-[0.8094] overflow-hidden cursor-pointer transition-slow">
+                                            <!-- mobile plus icon -->
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <!-- desktop background image -->
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/number-2.png" alt="number-2" class="w-full h-full object-cover brightness-30" />
+                                                <div class="absolute bg-grdnt-1 inset-0 mix-blend-difference"></div>
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- hover Gradient plus icon -->
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <!-- card Text -->
+                                            <div class=" px-20 py-20 absolute bottom-0 left-0 flex justify-start items-start text-start w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">#2  <br>Wohnen<br>neu denken</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 3 (Category 3) -->
+                                        <div class="forum-card group relative aspect-[0.8094] overflow-hidden cursor-pointer transition-slow">
+                                            <!-- mobile plus icon -->
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <!-- desktop background image -->
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/number-3.png" alt="number-3" class="w-full h-full object-cover brightness-30" />
+                                                <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div>
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- hover Gradient plus icon -->
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <!-- card Text -->
+                                            <div class=" px-20 py-20 absolute bottom-0 left-0 flex justify-start items-start text-start w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">#3 <br>Freiraumwende <br> erreichen</h3>
+                                            </div>
+                                        </div>
+                                        <!-- CARD 4 (Category 4) -->
+                                        <div class="forum-card group relative aspect-[0.8094] overflow-hidden cursor-pointer transition-slow">
+                                            <!-- mobile plus icon -->
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <!-- desktop background image -->
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/number-4.png" alt="number-4" class="w-full h-full object-cover brightness-30" />
+                                                <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div>
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- hover Gradient plus icon -->
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <!-- card Text -->
+                                            <div class=" px-20 py-20 absolute bottom-0 left-0 flex justify-start items-start text-start w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">#4  <br>Öffentlichen<br>Raum stärken</h3>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- CARD 5 (Category 5) -->
+                                        <div class="forum-card group relative aspect-[0.8094] overflow-hidden cursor-pointer transition-slow">
+                                            <!-- mobile plus icon -->
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <!-- desktop background image -->
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/number-5.png" alt="number-5" class="w-full h-full object-cover brightness-30" />
+                                                <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div>
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- hover Gradient plus icon -->
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <!-- card Text -->
+                                            <div class=" px-20 py-20 absolute bottom-0 left-0 flex justify-start items-start text-start w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">#5  <br>Teilhabe <br> ermöglichen</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 6 (Category 6) -->
+                                        <div class="forum-card group relative aspect-[0.8094] overflow-hidden cursor-pointer transition-slow">
+                                            <!-- mobile plus icon -->
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <!-- desktop background image -->
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/number-6.png" alt="number-6" class="w-full h-full object-cover brightness-30" />
+                                                <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div>
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- hover Gradient plus icon -->
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <!-- card Text -->
+                                            <div class=" px-20 py-20 absolute bottom-0 left-0 flex justify-start items-start text-start w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">#6  <br>Resilienz <br> vorantreiben</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 7 (Category 7) -->
+                                       <div class="forum-card group relative aspect-[0.8094] overflow-hidden cursor-pointer transition-slow">
+                                            <!-- mobile plus icon -->
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <!-- desktop background image -->
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/number-7.png" alt="number-7" class="w-full h-full object-cover brightness-30" />
+                                                <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div>
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- hover Gradient plus icon -->
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <!-- card Text -->
+                                            <div class=" px-20 py-20 absolute bottom-0 left-0 flex justify-start items-start text-start w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">#7  <br>Zirkularität <br>umsetzen</h3>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- CARD 8 (Category 8) -->
+                                        <div class="forum-card group relative aspect-[0.8094] overflow-hidden cursor-pointer transition-slow">
+                                            <!-- mobile plus icon -->
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <!-- desktop background image -->
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/number-8.png" alt="number-8" class="w-full h-full object-cover brightness-30" />
+                                                <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div>
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- hover Gradient plus icon -->
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <!-- card Text -->
+                                            <div class=" px-20 py-20 absolute bottom-0 left-0 flex justify-start items-start text-start w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">#8 <br>  Digital planen</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 9 (Category 9) -->
+                                        <div class="forum-card group relative aspect-[0.8094] overflow-hidden cursor-pointer transition-slow">
+                                            <!-- mobile plus icon -->
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <!-- desktop background image -->
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/number-9.png" alt="number-9" class="w-full h-full object-cover brightness-30" />
+                                                <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div>
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- hover Gradient plus icon -->
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <!-- card Text -->
+                                            <div class=" px-20 py-20 absolute bottom-0 left-0 flex justify-start items-start text-start w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">#9  <br>Einfach bauen</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 10 (Category 10) -->
+                                        <div class="forum-card group relative aspect-[0.8094] overflow-hidden cursor-pointer transition-slow">
+                                            <!-- mobile plus icon -->
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <!-- desktop background image -->
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/number-10.png" alt="number-10" class="w-full h-full object-cover brightness-30" />
+                                                <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div>
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- hover Gradient plus icon -->
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <!-- card Text -->
+                                            <div class=" px-20 py-20 absolute bottom-0 left-0 flex justify-start items-start text-start w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">#10  <br>Qualität sichern</h3>
+                                            </div>
+                                        </div>
+
+                                          <!-- CARD 11 (Category 11) -->
+                                        <div class="forum-card group relative aspect-[0.8094] overflow-hidden cursor-pointer transition-slow">
+                                            <!-- mobile plus icon -->
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <!-- desktop background image -->
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/number-11.png" alt="number-11" class="w-full h-full object-cover brightness-30" />
+                                                <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div>
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- hover Gradient plus icon -->
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <!-- card Text -->
+                                            <div class=" px-20 py-20 absolute bottom-0 left-0 flex justify-start items-start text-start w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">#11  <br>Transformation
+                                                <br> finanzieren</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- CARD 12 (Category 12) -->
+                                        <div class="forum-card group relative aspect-[0.8094] overflow-hidden cursor-pointer transition-slow">
+                                            <!-- mobile plus icon -->
+                                            <div class="block md:hidden absolute top-12 right-12 z-10">
+                                                <i data-lucide="plus" class="size-20 text-white"></i>
+                                            </div>
+
+                                            <!-- desktop background image -->
+                                            <div class="absolute inset-0 w-full h-full">
+                                                <img src="assets/images/number-12.png" alt="number-12" class="w-full h-full object-cover brightness-30" />
+                                                <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div>
+                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                                                    <div class="wm_img">
+                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- hover Gradient plus icon -->
+                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
+                                                <i data-lucide="plus" class="size-52 text-white"></i>  
+                                            </div>
+
+                                            <!-- card Text -->
+                                            <div class=" px-20 py-20 absolute bottom-0 left-0 flex justify-start items-start text-start w-full transition-all group-hover:opacity-0 z-20">
+                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">#12  <br>Beruf weiter-<br>entwickeln</h3>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
- 
-        <section class="ctm_sec my-sec-lg">
-               <div class="container">
-                     <div class="component">
-                        <div class="flex flex-col gap-42 md:gap-gutter">
-                            <div>
-                                <h2 class="text-h2-std">Alle Speaker:innen im Überblick</h2>
-                            </div>
-                            <!-- tab -->
-                            <div x-data="{ activeFilter: 'all', dropdownOpen: false, 
-                                    selectedCategoryName: 'Nach Fachforen sortieren' }">
 
-                                    <!-- FILTER BUTTONS BAR -->
-                                    <div class="w-full flex justify-between sm:justify-start items-center gap-16 sm:gap-24 lg:gap-43 text-[13px] xsm:text-sm sm:text-body font-tabular font-medium mb-10 relative z-30">
-                                        
-                                        <!-- BUTTON 1: ALL -->
-                                        <button type="button"
-                                            @click="activeFilter = 'all'; selectedCategoryName = 'Nach Fachforen sortieren'"
-                                            :class="activeFilter === 'all' ? 'text-orange' : 'text-zinc-900 hover:text-orange'"
-                                            class="transition-colors">
-                                            Alle Speaker:innen
-                                        </button>
-
-                                        <!-- BUTTON 2: CATEGORY DROPDOWN -->
-                                        <div class="relative" @click.away="dropdownOpen = false">
-                                            <button 
-                                                type="button"
-                                                @click="dropdownOpen = !dropdownOpen"
-                                                :class="activeFilter !== 'all' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                class="flex items-center gap-10 transition-colors pl-8 sm:pl-30 pr-8 sm:pr-30 lg:pr-72">
-                                                <span x-text="selectedCategoryName"></span>
-                                                 
-                                                <svg class="w-14 sm:w-16 h-18 stroke-current transition-transform duration-200" :class="{ 'rotate-180': dropdownOpen }" width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M10 1.26358L5.57796 3L4.4086 3L4.4086 2.99812L2.18025e-08 1.17168L3.57747e-08 -7.15256e-07L4.98656 2.03321L10 0.0574352L10 1.26358Z" fill="black"/>
-                                                </svg>
-
-                                            </button>
-
-                                            <!-- HARDCODED DROPDOWN LIST -->
-                                            <div  x-show="dropdownOpen"
-                                                x-transition
-                                                class="absolute left-0 mt-8 w-full bg-white shadow-2xl z-50 text-[13px] sm:text-body font-tabular flex flex-col gap-6 sm:gap-12 py-12 px-16"
-                                                style="display: none;">
-                                                
-                                                <button type="button"
-                                                    @click="activeFilter = 'cat1'; selectedCategoryName = '#1 Bestand weiterbauen'; dropdownOpen = false"
-                                                    :class="activeFilter === 'cat1' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                    class="w-full text-left py-4 transition-colors">
-                                                    #1 Bestand weiterbauen
-                                                </button>
-
-                                                <button  type="button" @click="activeFilter = 'cat2'; selectedCategoryName = '#2 Wohnen neu denken'; dropdownOpen = false"
-                                                    :class="activeFilter === 'cat2' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                    class="w-full text-left py-4 transition-colors">
-                                                    #2 Wohnen neu denken
-                                                </button>
-
-                                                <button  type="button"  @click="activeFilter = 'cat3'; selectedCategoryName = '#3 Freiraumwende erreichen'; dropdownOpen = false"
-                                                    :class="activeFilter === 'cat3' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                    class="w-full text-left py-4 transition-colors">
-                                                    #3 Freiraumwende erreichen
-                                                </button>
-
-                                                <button  type="button"  @click="activeFilter = 'cat4'; selectedCategoryName = '#4 Öffentlichen Raum stärken'; dropdownOpen = false"
-                                                    :class="activeFilter === 'cat4' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                    class="w-full text-left py-4 transition-colors">
-                                                    #4 Öffentlichen Raum stärken
-                                                </button>
-                                                <button  type="button"  @click="activeFilter = 'cat5'; selectedCategoryName = '#5 Teilhabe ermöglichen'; dropdownOpen = false"
-                                                    :class="activeFilter === 'cat5' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                    class="w-full text-left py-4 transition-colors">
-                                                    #5 Teilhabe ermöglichen
-                                                </button>
-                                                <button  type="button"  @click="activeFilter = 'cat6'; selectedCategoryName = '#6 Resilienz vorantreiben'; dropdownOpen = false"
-                                                    :class="activeFilter === 'cat6' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                    class="w-full text-left py-4 transition-colors">
-                                                   #6 Resilienz vorantreiben
-                                                </button>
-                                                <button  type="button"  @click="activeFilter = 'cat7'; selectedCategoryName = '#7 Zirkularität umsetzen'; dropdownOpen = false"
-                                                    :class="activeFilter === 'cat7' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                    class="w-full text-left py-4 transition-colors">
-                                                    #7 Zirkularität umsetzen
-                                                </button>
-                                                <button  type="button"  @click="activeFilter = 'cat8'; selectedCategoryName = '#8 Digital planen'; dropdownOpen = false"
-                                                    :class="activeFilter === 'cat8' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                    class="w-full text-left py-4 transition-colors">
-                                                   #8 Digital planen
-                                                </button>
-                                                <button  type="button"  @click="activeFilter = 'cat9'; selectedCategoryName = '#9 Einfach bauen'; dropdownOpen = false"
-                                                    :class="activeFilter === 'cat9' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                    class="w-full text-left py-4 transition-colors">
-                                                  #9 Einfach bauen
-                                                </button>
-                                                <button  type="button"  @click="activeFilter = 'cat10'; selectedCategoryName = '#10 Qualität sichern'; dropdownOpen = false"
-                                                    :class="activeFilter === 'cat10' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                    class="w-full text-left py-4 transition-colors">
-                                                    #10 Qualität sichern
-                                                </button>
-                                                <button  type="button"  @click="activeFilter = 'cat11'; selectedCategoryName = '#11 Transformation finanzieren'; dropdownOpen = false"
-                                                    :class="activeFilter === 'cat11' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                    class="w-full text-left py-4 transition-colors">
-                                                   #11 Transformation finanzieren
-                                                </button>
-
-                                                <button  type="button"  @click="activeFilter = 'cat12'; selectedCategoryName = '#12 Beruf weiterentwickeln'; dropdownOpen = false"
-                                                    :class="activeFilter === 'cat12' ? 'text-orange' : 'text-black hover:text-orange active:text-orange focus-within:text-orange'"
-                                                    class="w-full text-left py-4 transition-colors">
-                                                  #12 Beruf weiterentwickeln
-                                                </button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <!-- HARDCODED CARDS GRID -->
-                                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20 mt-35">
-
-                                        <!-- CARD 1 (Category 1) -->
-                                        <div x-show="['all', 'cat1', 'cat2', 'cat8'].includes(activeFilter)"
-                                            x-transition
-                                            class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
-
-                                            <div class="block md:hidden absolute top-12 right-12 z-10">
-                                                <i data-lucide="plus" class="size-20 text-white"></i>
-                                            </div>
-
-                                            <div class="absolute inset-0 w-full h-full">
-                                                <img src="assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover" />
-                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
-                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                    <div class="wm_img">
-                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
-                                                <img src="assets/images/speaker-1.webp" alt="Dr. Friederike Maus" class="h-full w-full object-cover object-top">
-                                            </div>
-
-                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
-                                                <i data-lucide="plus" class="size-52 text-white"></i>  
-                                            </div>
-
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
-                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Dr. Friederike <br> Maus</h3>
-                                            </div>
-                                        </div>
-
-                                        <!-- CARD 2 (Category 2) -->
-                                        <div x-show="['all', 'cat2', 'cat6', 'cat4'].includes(activeFilter)"
-                                            x-transition
-                                            class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
-                                            <div class="block md:hidden absolute top-12 right-12 z-10">
-                                                <i data-lucide="plus" class="size-20 text-white"></i>
-                                            </div>
-                                            
-
-                                            <div class="absolute inset-0 w-full h-full">
-                                                <img src="assets/images/bg-speaker-3.webp" alt="" class="w-full h-full object-cover" />
-                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
-                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                    <div class="wm_img">
-                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
-                                                <img src="assets/images/speaker-3.webp" alt="Heike Blohm-Schröder" class="h-full w-full object-cover object-top">
-                                            </div>
-
-                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
-                                                <i data-lucide="plus" class="size-52 text-white"></i>  
-                                            </div>
-
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
-                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Heike <br>Blohm-Schröder</h3>
-                                            </div>
-                                        </div>
-
-                                        <!-- CARD 3 (Category 3) -->
-                                        <div x-show="['all', 'cat3'].includes(activeFilter)"
-                                            x-transition
-                                            class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
-                                            
-                                            <div class="block md:hidden absolute top-12 right-12 z-10">
-                                                <i data-lucide="plus" class="size-20 text-white"></i>
-                                            </div>
-
-                                            <div class="absolute inset-0 w-full h-full">
-                                                <img src="assets/images/bg-speaker-2.png" alt="" class="w-full h-full object-cover" />
-                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
-                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                    <div class="wm_img">
-                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
-                                                <img src="assets/images/speaker-2.webp" alt="Katja Domschky" class="h-full w-full object-cover object-top">
-                                            </div>
-
-                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
-                                                <i data-lucide="plus" class="size-52 text-white"></i>  
-                                            </div>
-
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
-                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Katja <br> Domschky</h3>
-                                            </div>
-                                        </div>
-                                        <!-- CARD 4 (Category 4) -->
-                                        <div x-show="['all', 'cat4', 'cat6', 'cat3'].includes(activeFilter)"
-                                                x-transition
-                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
-                                            
-                                                <div class="block md:hidden absolute top-12 right-12 z-10">
-                                                <i data-lucide="plus" class="size-20 text-white"></i>
-                                            </div>
-                                            
-
-                                            <div class="absolute inset-0 w-full h-full">
-                                                <img src="assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover" />
-                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
-                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                    <div class="wm_img">
-                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
-                                                <img src="assets/images/speaker-1.webp" alt="Dr. Markus Gabriel" class="h-full w-full object-cover object-top">
-                                            </div>
-
-                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
-                                                <i data-lucide="plus" class="size-52 text-white"></i>  
-                                            </div>
-
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
-                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Dr. Markus <br> Gabriel</h3>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- CARD 5 (Category 5) -->
-                                        <div x-show="['all', 'cat5', 'cat6', 'cat4'].includes(activeFilter)"
-                                                x-transition
-                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
-                                            
-                                                <div class="block md:hidden absolute top-12 right-12 z-10">
-                                                <i data-lucide="plus" class="size-20 text-white"></i>
-                                            </div>
-                                            
-
-                                            <div class="absolute inset-0 w-full h-full">
-                                                <img src="assets/images/bg-speaker-3.webp" alt="" class="w-full h-full object-cover" />
-                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
-                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                    <div class="wm_img">
-                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
-                                                <img src="assets/images/speaker-3.webp" alt="Prof. Dr. Linda Hildebrand" class="h-full w-full object-cover object-top">
-                                            </div>
-
-                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
-                                                <i data-lucide="plus" class="size-52 text-white"></i>  
-                                            </div>
-
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
-                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Prof. Dr. Linda <br> Hildebrand</h3>
-                                            </div>
-                                        </div>
-
-                                        <!-- CARD 6 (Category 6) -->
-                                        <div x-show="['all', 'cat6', 'cat3', 'cat4'].includes(activeFilter)"
-                                                x-transition
-                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
-                                            
-                                                <div class="block md:hidden absolute top-12 right-12 z-10">
-                                                <i data-lucide="plus" class="size-20 text-white"></i>
-                                            </div>
-                                            
-
-                                            <div class="absolute inset-0 w-full h-full">
-                                                <img src="assets/images/bg-speaker-2.png" alt="" class="w-full h-full object-cover" />
-                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
-                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                    <div class="wm_img">
-                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
-                                                <img src="assets/images/speaker-2.webp" alt="Jette Cathrin Hopp" class="h-full w-full object-cover object-top">
-                                            </div>
-
-                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
-                                                <i data-lucide="plus" class="size-52 text-white"></i>  
-                                            </div>
-
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
-                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Jette Cathrin<br> Hopp</h3>
-                                            </div>
-                                        </div>
-
-                                        <!-- CARD 7 (Category 7) -->
-                                        <div x-show="['all', 'cat7', 'cat9', 'cat12'].includes(activeFilter)"
-                                                x-transition
-                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
-                                            
-                                                <div class="block md:hidden absolute top-12 right-12 z-10">
-                                                <i data-lucide="plus" class="size-20 text-white"></i>
-                                            </div>
-                                            
-
-                                            <div class="absolute inset-0 w-full h-full">
-                                                <img src="assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover" />
-                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
-                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                    <div class="wm_img">
-                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
-                                                <img src="assets/images/speaker-1.webp" alt="Van Bo Le-Mentzel" class="h-full w-full object-cover object-top">
-                                            </div>
-
-                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
-                                                <i data-lucide="plus" class="size-52 text-white"></i>  
-                                            </div>
-
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
-                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Van Bo<br> Le-Mentzel</h3>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- CARD 8 (Category 8) -->
-                                        <div x-show="['all', 'cat8', 'cat6', 'cat4'].includes(activeFilter)"
-                                                x-transition
-                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
-                                            
-                                                <div class="block md:hidden absolute top-12 right-12 z-10">
-                                                <i data-lucide="plus" class="size-20 text-white"></i>
-                                            </div>
-                                            
-
-                                            <div class="absolute inset-0 w-full h-full">
-                                                <img src="assets/images/bg-speaker-3.webp" alt="" class="w-full h-full object-cover" />
-                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
-                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                    <div class="wm_img">
-                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
-                                                <img src="assets/images/speaker-3.webp" alt="Stefan Postert" class="h-full w-full object-cover object-top">
-                                            </div>
-
-                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
-                                                <i data-lucide="plus" class="size-52 text-white"></i>  
-                                            </div>
-
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
-                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Stefan<br> Postert</h3>
-                                            </div>
-                                        </div>
-
-                                        <!-- CARD 9 (Category 9) -->
-                                        <div x-show="['all', 'cat9', 'cat6', 'cat4'].includes(activeFilter)"
-                                                x-transition
-                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
-                                            
-                                                <div class="block md:hidden absolute top-12 right-12 z-10">
-                                                <i data-lucide="plus" class="size-20 text-white"></i>
-                                            </div>
-                                            
-
-                                            <div class="absolute inset-0 w-full h-full">
-                                                <img src="assets/images/bg-speaker-2.png" alt="Prof. Dr. Tanja Remke" class="w-full h-full object-cover" />
-                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
-                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                    <div class="wm_img">
-                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
-                                                <img src="assets/images/speaker-2.webp" alt="Van Bo Le-Mentzel" class="h-full w-full object-cover object-top">
-                                            </div>
-
-                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
-                                                <i data-lucide="plus" class="size-52 text-white"></i>  
-                                            </div>
-
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
-                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Prof. Dr. Tanja<br> Remke</h3>
-                                            </div>
-                                        </div>
-
-                                        <!-- CARD 10 (Category 10) -->
-                                        <div x-show="['all', 'cat10', 'cat6', 'cat4'].includes(activeFilter)"
-                                                x-transition
-                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
-                                            
-                                                <div class="block md:hidden absolute top-12 right-12 z-10">
-                                                <i data-lucide="plus" class="size-20 text-white"></i>
-                                            </div>
-                                            
-
-                                            <div class="absolute inset-0 w-full h-full">
-                                                <img src="assets/images/bg-speaker-3.webp" alt="Franz Reschke" class="w-full h-full object-cover" />
-                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
-                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                    <div class="wm_img">
-                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
-                                                <img src="assets/images/speaker-3.webp" alt="Van Bo Le-Mentzel" class="h-full w-full object-cover object-top">
-                                            </div>
-
-                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
-                                                <i data-lucide="plus" class="size-52 text-white"></i>  
-                                            </div>
-
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
-                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Franz<br> Reschke</h3>
-                                            </div>
-                                        </div>
-
-                                          <!-- CARD 11 (Category 11) -->
-                                        <div x-show="['all', 'cat11', 'cat6', 'cat4'].includes(activeFilter)"
-                                                x-transition
-                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
-                                            
-                                                <div class="block md:hidden absolute top-12 right-12 z-10">
-                                                <i data-lucide="plus" class="size-20 text-white"></i>
-                                            </div>
-                                            
-
-                                            <div class="absolute inset-0 w-full h-full">
-                                                <img src="assets/images/bg-speaker-2.png" alt="Prof. Dr. Tanja Remke" class="w-full h-full object-cover" />
-                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
-                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                    <div class="wm_img">
-                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
-                                                <img src="assets/images/speaker-2.webp" alt="Van Bo Le-Mentzel" class="h-full w-full object-cover object-top">
-                                            </div>
-
-                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
-                                                <i data-lucide="plus" class="size-52 text-white"></i>  
-                                            </div>
-
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
-                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Prof. Dr. Tanja<br> Remke</h3>
-                                            </div>
-                                        </div>
-
-                                        <!-- CARD 12 (Category 12) -->
-                                        <div x-show="['all', 'cat12', 'cat6', 'cat4'].includes(activeFilter)"
-                                                x-transition
-                                                class="speaker-card group relative aspect-3/4 overflow-hidden cursor-pointer transition-slow">
-                                            
-                                                <div class="block md:hidden absolute top-12 right-12 z-10">
-                                                <i data-lucide="plus" class="size-20 text-white"></i>
-                                            </div>
-                                            
-
-                                            <div class="absolute inset-0 w-full h-full">
-                                                <img src="assets/images/bg-speaker-3.webp" alt="Franz Reschke" class="w-full h-full object-cover" />
-                                                <!-- <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div> -->
-                                                 <div class="wm_wrapper absolute bottom-20 right-20 z-10">
-                                                    <div class="wm_img">
-                                                    <img src="./assets/images/KI generiert.svg" alt="KI generiert">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="absolute inset-0 flex items-end justify-center pt-10">
-                                                <img src="assets/images/speaker-3.webp" alt="Van Bo Le-Mentzel" class="h-full w-full object-cover object-top">
-                                            </div>
-
-                                            <div class="absolute bg-grdnt-3 inset-0 z-10 opacity-0 hidden md:flex justify-center items-center group-hover:opacity-90 transition-slow group-hover:backdrop-blur-sm">
-                                                <i data-lucide="plus" class="size-52 text-white"></i>  
-                                            </div>
-
-                                            <div class="bg-[#000000BF] px-16 xl:px-32 py-12 absolute bottom-0 left-0 flex justify-center items-center text-center w-full transition-all group-hover:opacity-0 z-20">
-                                                <h3 class="text-white font-medium tracking-wide text-body md:text-h4-highlight font-tabular ">Franz<br> Reschke</h3>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
+       <!-- modal popup -->
+        <div id="modal-popup1" class="hidden w-full h-screen fixed top-0 z-9999991 xl:z-10 bg-[rgba(0,0,0,0.7)] flex-col lg:flex-row overflow-y-auto">
+            <!-- LEFT SIDE: Media & Close Button -->
+            <div class="relative lg:w-[40%] h-full">
+                <a href="#" id="close-modal-btn1" class="lg:hidden w-65 h-65 bg-[#000000B2] rounded-full absolute top-45 right-25 flex justify-center items-center">
+                    <svg class="w-32 xl:w-43 h-32 xl:h-43" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M31.7459 10.5312L10.6836 31.8943" stroke="#ffffff" stroke-width="1.55436" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.5311 10.6819L31.8941 31.7442" stroke="#ffffff" stroke-width="1.55436" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <div class="absolute top-0 left-0 w-full h-full -z-1">
+                    <!-- Dynamic Background Image/Video from Backend -->
+                    <img src="./assets/images/number-1.png" alt="Fachforum Background" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute bg-grdnt-1 inset-0 z-0 mix-blend-difference"></div>
+                <div class="wm_wrapper absolute bottom-20 right-20 z-10">
+                    <div class="wm_img">
+                        <img src="./assets/images/KI generiert.svg" alt="KI generiert">
+                    </div>
+                </div>
+            </div>
+
+    <!-- RIGHT SIDE: Dynamic Content Area -->
+    <div class="relative backdrop-blur-sm lg:w-[60%] md:h-full flex justify-start items-start md:items-center pt-46 pb-100 md:py-gutter  lg:pl-sec-sm">
+        <a href="#" id="close-modal-btn1" class="hidden lg:flex w-50 xl:w-65 h-50 xl:h-65 bg-white rounded-full absolute top-80 xl:top-180 right-20 justify-center items-center">
+            <svg class="w-32 xl:w-43 h-32 xl:h-43" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M31.7459 10.5312L10.6836 31.8943" stroke="black" stroke-width="1.55436" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10.5311 10.6819L31.8941 31.7442" stroke="black" stroke-width="1.55436" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+
+        <div class="flex flex-col justify-end items-start gap-45 xl:gap-70 h-full">
+            <!-- Fachforum Header -->
+            <div class="px-34 sm:px-0 text-white space-y-30 md:max-w-550">
+                <h3 class="text-h3-std">#1 Bestand weiterbauen</h3>
+                <p>Umgang mit vorhandener Substanz: Kulturelle Werte, Regeln und Handlungsspielräume</p>
+            </div>
+
+            <!-- Scrollable Timeline Container -->
+            <div x-data="timelineSlider" class="relative px-34 sm:px-0 flex gap-24 md:gap-40 items-stretch h-auto lg:h-380 max-h-[35vh] xl:max-h-[45svh] w-full 3xl:w-[70%]">
+                
+                <!-- Left Progress Track -->
+                <div class="hidden sm:block w-2 shrink-0 bg-white/20 relative rounded-full sm:overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full bg-white transition-all duration-150 ease-out rounded-full"
+                         :style="{ height: `${progress}%` }">
+                    </div>
+                </div>
+
+                <!-- Right Viewport Loop -->
+                <div x-ref="viewport" 
+                     @scroll="updateProgress()"
+                     class="flex-1 space-y-32 overflow-y-auto overflow-x-visible sm:overflow-x-hidden pr-0 sm:pr-34 md:pr-40 xl:pr-80 3xl:pr-120 no-scrollbar scroll-smooth [webkit-overflow-scrolling:touch]">
+                    
+                    <!-- Program Item 1 -->
+                    <div class="cursor-pointer group border-b border-white/20 pb-32 last:border-b-0 transition-opacity duration-300">
+                        <div class="flex flex-col items-start gap-12 text-h4-std font-tabular font-medium mb-12 text-orange">
+                            <span>11:00 Uhr – 12:30 Uhr</span>
+                        </div>
+
+                        <h3 class="text-h4-std font-tabular font-medium text-white mb-20 leading-snug max-w-2xl">
+                            #1A Bestand wertschätzen und weiterdenken
+                        </h3>
+                        
+                        <!-- Short Description (Optional, max 120 chars) -->
+                        <div class="text-body-sm mb-12  text-white hidden sm:block">
+                            <p>Kurze Beschreibung des Moduls für den Fachforum-Inhalt.</p>
+                        </div>
+                        
+
+                        <div class="relative flex flex-col sm:flex-row justify-between items-start sm:items-end gap-16">
+                            <div class="space-y-4 text-body-sm text-white font-inter">
+                                <p>Peter Köddermann</p>
+                                <p>Heike Blohm-Schröder</p>
+                                <p>Dr. Barbara Rüschoff-Parzinger</p>
                             </div>
 
-                            <!-- Add more button -->
-                             <a href="/" class="btn btn-light mt-15 mx-auto">
-                                        <span>Weitere laden</span>
-                                        <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor"></path>
-                                        </svg>               
-                            </a>
+                            <span class="absolute right-0  bottom-0 sm:relative bg-orange text-black font-tabular font-bold text-xs uppercase px-12 py-6 tracking-wider shrink-0">
+                                AUSGEBUCHT!
+                            </span>
                         </div>
                     </div>
-               </div>
-        </section>
-       <!-- modal popup -->
-        <div id="modal-popup" class="hidden w-full h-screen fixed top-0 z-999999 xl:z-10  bg-black md:bg-[#000000CC] flex-col lg:flex-row overflow-y-auto">
-            <div class="relative lg:w-1/2 h-full">
-                <a href="#" id="close-modal-btn" class="lg:hidden w-65 h-65 bg-[#000000B2] rounded-full absolute top-53 right-25 flex justify-center items-center">
-                            <svg class="w-32 xl:w-43 h-32 xl:h-43" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M31.7459 10.5312L10.6836 31.8943" stroke="#ffffff" stroke-width="1.55436" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M10.5311 10.6819L31.8941 31.7442" stroke="#ffffff" stroke-width="1.55436" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
 
-                        </a>
-                        <div class="absolute top-0 left-0 w-full h-full -z-1">
-                            <img src="./assets/images/bg-speaker-1.png" alt="" class="w-full h-full object-cover">
+                    <!-- Program Item 2 (With Special Junior Forum Category) -->
+                    <div class="cursor-pointer group border-b border-white/20 pb-32 last:border-b-0 transition-opacity duration-300">
+                        <div class="flex flex-col items-start gap-12 text-h4-std font-tabular font-medium mb-12 text-pink">
+                            <span>14:45 Uhr – 17:30 Uhr</span>
+                            <span class="flex items-center gap-6 text-white text-body-sm font-normal">
+                                <span>✱</span>
+                                <span>Junior-Forum</span>
+                            </span>
                         </div>
-                        <div class="w-full h-full flex justify-center items-end">
-                            <img src="./assets/images/speaker-1.webp" alt="" class="w-auto h-[80%] object-cover">
-                        </div>
-                </div>
-                <div class="relative backdrop-blur-sm lg:w-1/2 md:h-full flex justify-start items-start md:items-center pt-46 pb-142 md:py-gutter px-42 lg:pl-sec-sm">
-                            <a href="#" id="close-modal-btn" class="hidden lg:flex w-50 xl:w-65 h-50 xl:h-65 bg-white rounded-full absolute top-80 xl:top-180 right-20 justify-center items-center">
-                                <svg class="w-32 xl:w-43 h-32 xl:h-43" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M31.7459 10.5312L10.6836 31.8943" stroke="black" stroke-width="1.55436" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M10.5311 10.6819L31.8941 31.7442" stroke="black" stroke-width="1.55436" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
 
-                            </a>
-                        <div class="flex flex-col gap-30 text-white text-body">
-                            <h3 class="text-pink font-tabular text-h3-std">Heike Blohm-Schröder</h3>
-                            <div class="free_text max-w-378 mb-15">
-                                <p>Geschäftsbereichleiterin Baumanagement, <br>
-                                    Bau- und Liegenschaftsbetrieb Nordrhein-Westfalen (BLB NRW)</p>
+                        <h3 class="text-h4-std font-tabular font-medium text-white mb-20 leading-snug max-w-2xl">
+                            #1B Neue Rahmenbedingungen für das Bauen im Bestand schaffen
+                        </h3>
 
-                                <div class="space-y-8 flex flex-col">
-                                    <span><b>Fachrichtung:</b> Architektur</span>
-                                    <span><b>Fachforum:</b> Bestand weiterbauen (1A & 1B)</span>
-                                </div>
-                                    
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-16">
+                            <div class="space-y-4 text-body-sm text-zinc-300 font-inter">
+                                <p>Prof. Dr. Linda Hildebrand</p>
+                                <p>Jette Cathrin Hopp</p>
                             </div>
-                            <a href="#" class="hidden md:flex btn btn-light border-0">
-                                <span>Agenda entdecken</span>
-                                    <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor"></path>
-                                    </svg>
-                            </a>
-                             <a href="#" class="btn-pink p-30 fixed inset-0 top-auto w-full text-h2-std md:hidden z-9999">
-                                <span>Agenda entdecken</span>
-                                    <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor"></path>
-                                    </svg>
-                            </a>
                         </div>
+                    </div>
+
                 </div>
+            </div>
+
+            <a href="#" class="hidden md:flex btn btn-light border-0">
+                <span>JETZT ANMELDEN</span>
+                <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor"></path>
+                </svg>
+            </a>
+            <a href="#" class="btn-pink p-30 fixed inset-0 top-auto w-full text-h2-std md:hidden z-9999">
+                <span>JETZT ANMELDEN</span>
+                <svg width="7" height="18" viewBox="0 0 7 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.94835 -3.98482e-07L7 7.95968L7 10.0645L6.99562 10.0645L2.73392 18L-1.90735e-06 18L4.74416 9.02419L0.134017 -6.75273e-07L2.94835 -3.98482e-07Z" fill="currentColor"></path>
+                </svg>
+            </a>
         </div>
+    </div>
+</div>
 
         <!--  -->
         <section class="ctm_sec my-sec-lg">
@@ -1212,7 +1125,6 @@
     <script src="assets/js/lucide.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
-<!-- JAVASCRIPT ALIGNMENT ENGINE -->
 
 </body>
 
