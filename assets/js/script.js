@@ -287,7 +287,7 @@ document.addEventListener('alpine:init', () => {
 });
 
 // ---------------------------------------------------------
-// CARD POPUP
+// CARD POPUP AGENDa
 // ---------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('modal-popup1');
