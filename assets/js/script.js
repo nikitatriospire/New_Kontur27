@@ -141,6 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtns = document.querySelectorAll('#close-modal-btn');
     const cards = document.querySelectorAll('.speaker-card');
 
+    // SAFEGUARD: Stop execution if the modal doesn't exist on this page
+    if (!modal) return;
+
     function openModal() {
         modal.style.display = 'flex';
         modal.classList.remove('hidden');
@@ -154,10 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
-    // Attach listeners to all speaker cards
+    // Attach listeners safely
     cards.forEach(card => card.addEventListener('click', openModal));
-    
-    // Attach listeners to both mobile and desktop close buttons
     closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
 
     // Close on ESC key press

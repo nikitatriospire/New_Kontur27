@@ -146,11 +146,11 @@ body { -webkit-hyphens: auto;
         @apply font-semibold;
     }
 
-    .btn-pink::after {
+    .btn-pink::after, .btn-pink-sm::after {
         @apply content-[''] absolute inset-0 -z-1 bg-linear-0 from-orange to-pink transition-slow
     }
 
-    .btn-pink:hover::after {
+    .btn-pink:hover::after, .btn-pink-sm:hover::after {
         @apply opacity-0
     }
 
@@ -448,7 +448,9 @@ ul li a[aria-current="page"] .svg-hover {
 @utility btn-pink {
     @apply flex items-center gap-10 uppercase w-fit font-tabular font-medium transition-slow justify-center bg-black text-white text-h4-std relative z-1;
 }
-
+@utility btn-pink-sm {
+    @apply flex items-center gap-10 uppercase w-fit font-tabular font-medium transition-slow justify-center bg-black text-black relative z-1 hover:text-white;
+}
 @utility bg-grdnt-1 {
     @apply bg-linear-0 from-orange to-pink
 }
@@ -460,6 +462,9 @@ ul li a[aria-current="page"] .svg-hover {
 }
 @utility bg-grdnt-3{
     background: linear-gradient(180.28deg, #D792FF 0.23%, #FF8400 99.74%);
+}
+@utility bg-grdnt-light{
+    background: linear-gradient(180deg, rgba(215, 146, 255, 0.3) 4.72%, rgba(255, 132, 0, 0.3) 100%);
 }
 @utility text-vertical {
     writing-mode: vertical-rl;
